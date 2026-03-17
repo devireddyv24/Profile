@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vamshi Dhar | Software Test Engineer Portfolio</title>
+    <style>
+        :root {
+            --primary: #3498db;
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
+                        url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1000');
+            background-size: cover;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        header h1 { font-size: 3.5rem; margin: 0; letter-spacing: -1px; }
+        header p { font-size: 1.2rem; color: var(--primary); font-weight: 600; margin-top: 10px; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 50px 20px; }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            border-left: 4px solid var(--primary);
+            padding-left: 15px;
+        }
+
+        /* About Section */
+        .about-text { font-size: 1.1rem; color: var(--text-dim); max-width: 800px; }
+
+        /* Project Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+            border: 1px solid #334155;
+        }
+
+        .project-card:hover { transform: translateY(-10px); border-color: var(--primary); }
+        .project-card h3 { color: var(--primary); margin-top: 0; }
+        .project-card p { font-size: 0.9rem; color: var(--text-dim); }
+        .tag {
+            display: inline-block;
+            background: #0ea5e920;
+            color: #38bdf8;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-right: 5px;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact-box {
+            text-align: center;
+            background: var(--primary);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 50px;
+        }
+
+        footer { text-align: center; padding: 40px; color: var(--text-dim); font-size: 0.8rem; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Vamshi Dhar</h1>
+    <p>Software Test Engineer | QA Automation Specialist</p>
+</header>
+
+<div class="container">
+    <section>
+        <h2 class="section-title">About Me</h2>
+        <p class="about-text">
+            I am a results-driven QA professional with over 3 years of expertise in validating high-scale e-commerce and fintech applications. 
+            My passion lies in breaking complex systems to ensure they are built stronger. I specialize in <strong>Omni-channel retail workflows</strong>, 
+            bridging the gap between digital storefronts and physical operations through rigorous automation and manual testing strategies.
+        </p>
+    </section>
+
+    <section style="margin-top: 60px;">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="project-grid">
+            
+            <div class="project-card">
+                <h3>Fossil India (Omni-channel)</h3>
+                <p>Designed and executed end-to-end testing for forward and return order flows. Validated BOPIS (Buy Online Pick Up In Store) synchronization between web and physical inventory.</p>
+                <div class="tag">Order Lifecycle</div>
+                <div class="tag">Backend Validation</div>
+                <div class="tag">Retail</div>
+            </div>
+
+            <div class="project-card">
+                <h3>Reval Retail APK</h3>
+                <p>Built a Hybrid Page Object Model (POM) framework using Appium to automate mobile retail workflows. Successfully reduced manual regression time by 40%.</p>
+                <div class="tag">Appium</div>
+                <div class="tag">Mobile Automation</div>
+                <div class="tag">Java</div>
+            </div>
+
+            <div class="project-card">
+                <h3>Watch Station India</h3>
+                <p>Comprehensive functional testing of admin panels and checkout engines. Verified complex coupon validation and transaction logging accuracy.</p>
+                <div class="tag">Functional Testing</div>
+                <div class="tag">Admin Panel</div>
+                <div class="tag">Payments</div>
+            </div>
+
+            <div class="project-card">
+                <h3>Remittance Fintech System</h3>
+                <p>Tested high-frequency money transfer systems ensuring precise currency conversion and secure payment processing using Selenium.</p>
+                <div class="tag">Selenium</div>
+                <div class="tag">Fintech</div>
+                <div class="tag">Security</div>
+            </div>
+
+            <div class="project-card">
+                <h3>Decathlon Web Platform</h3>
+                <p>Focused on UI/UX and cross-browser compatibility testing. Assisted in implementing Cypress scripts for stable release cycles.</p>
+                <div class="tag">Cypress</div>
+                <div class="tag">UI/UX Testing</div>
+                <div class="tag">Jira</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="contact-box">
+        <h2>Let's Connect</h2>
+        <p>I am always open to discussing new opportunities in QA Automation.</p>
+        <p><strong>Email:</strong> davireddy22@gmail.com | <strong>Phone:</strong> +91 8179888932</p>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 Vamshi Dhar | Designed for QA Excellence
+</footer>
+
+</body>
+</html>
