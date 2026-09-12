@@ -2,15 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Vamshi Dhar Reddy | QA Automation Engineer</title>
 
     <meta name="description"
           content="Portfolio of Vamshi Dhar Reddy, Software Test Engineer with 3.8+ years of experience in Selenium Java, TestNG, Cucumber BDD, Appium, API testing, Playwright and performance testing.">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
           rel="stylesheet">
@@ -25,7 +31,7 @@
             --accent: #69f0cf;
             --accent-2: #5b8cff;
             --border: rgba(255, 255, 255, 0.09);
-            --glass: rgba(7, 9, 13, 0.86);
+            --glass: rgba(7, 9, 13, 0.9);
             --radius: 24px;
             --shadow: 0 30px 80px rgba(0, 0, 0, 0.38);
         }
@@ -37,7 +43,7 @@
             --text: #101828;
             --muted: #667085;
             --border: rgba(16, 24, 40, 0.1);
-            --glass: rgba(255, 255, 255, 0.9);
+            --glass: rgba(255, 255, 255, 0.94);
             --shadow: 0 25px 70px rgba(16, 24, 40, 0.12);
         }
 
@@ -69,7 +75,9 @@
             font-family: "Inter", sans-serif;
             line-height: 1.7;
             overflow-x: hidden;
-            transition: background 0.3s, color 0.3s;
+            transition:
+                background 0.3s,
+                color 0.3s;
         }
 
         a {
@@ -80,6 +88,10 @@
             font: inherit;
         }
 
+        img {
+            max-width: 100%;
+        }
+
         section,
         header {
             scroll-margin-top: 90px;
@@ -87,10 +99,10 @@
 
         .container {
             width: min(1180px, calc(100% - 40px));
-            margin: auto;
+            margin-inline: auto;
         }
 
-        /* Page progress */
+        /* Page progress bar */
 
         .page-progress {
             width: 100%;
@@ -98,7 +110,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            z-index: 2000;
+            z-index: 3000;
             background: rgba(255, 255, 255, 0.04);
         }
 
@@ -110,7 +122,8 @@
                 var(--accent),
                 var(--accent-2)
             );
-            box-shadow: 0 0 15px rgba(105, 240, 207, 0.45);
+            box-shadow:
+                0 0 15px rgba(105, 240, 207, 0.45);
         }
 
         /* Navigation */
@@ -118,7 +131,7 @@
         .navbar {
             position: fixed;
             inset: 0 0 auto;
-            z-index: 1000;
+            z-index: 2000;
             border-bottom: 1px solid transparent;
             transition: 0.3s ease;
         }
@@ -206,8 +219,10 @@
             gap: 7px;
             padding: 10px 14px;
             color: var(--accent);
-            background: rgba(105, 240, 207, 0.07);
-            border: 1px solid rgba(105, 240, 207, 0.22);
+            background:
+                rgba(105, 240, 207, 0.07);
+            border:
+                1px solid rgba(105, 240, 207, 0.22);
             border-radius: 12px;
             font-size: 0.76rem;
             font-weight: 700;
@@ -243,19 +258,19 @@
         .icon-button:hover,
         .menu-button:hover {
             color: var(--accent);
-            border-color: rgba(105, 240, 207, 0.45);
+            border-color:
+                rgba(105, 240, 207, 0.45);
         }
 
         .menu-button {
             display: none;
         }
 
-        /* Scroll hero */
+        /* Scroll-driven hero */
 
         .hero {
             min-height: 180vh;
             position: relative;
-            padding: 0;
         }
 
         .hero-sticky {
@@ -271,13 +286,16 @@
             height: calc(100vh - 105px);
             min-height: 620px;
             display: grid;
-            grid-template-columns: 1.35fr 0.65fr;
+            grid-template-columns:
+                minmax(0, 1.35fr)
+                minmax(300px, 0.65fr);
             grid-template-rows: 1fr 1fr;
             gap: 18px;
             margin-top: 82px;
         }
 
         .hero-main {
+            min-width: 0;
             min-height: 0;
             position: relative;
             grid-row: span 2;
@@ -289,7 +307,7 @@
             isolation: isolate;
         }
 
-        /* Corrected image layering */
+        /* Hero image */
 
         .hero-photo {
             width: 100%;
@@ -312,14 +330,14 @@
             background:
                 linear-gradient(
                     90deg,
-                    rgba(5, 7, 10, 0.88) 0%,
-                    rgba(5, 7, 10, 0.68) 39%,
-                    rgba(5, 7, 10, 0.15) 70%,
+                    rgba(5, 7, 10, 0.9) 0%,
+                    rgba(5, 7, 10, 0.68) 40%,
+                    rgba(5, 7, 10, 0.12) 72%,
                     transparent 100%
                 ),
                 linear-gradient(
                     0deg,
-                    rgba(5, 7, 10, 0.75) 0%,
+                    rgba(5, 7, 10, 0.78) 0%,
                     transparent 58%
                 );
         }
@@ -334,11 +352,6 @@
                     circle at 82% 20%,
                     rgba(91, 140, 255, 0.12),
                     transparent 30%
-                ),
-                linear-gradient(
-                    120deg,
-                    rgba(105, 240, 207, 0.04),
-                    transparent 45%
                 );
         }
 
@@ -349,7 +362,9 @@
             right: clamp(28px, 5vw, 65px);
             bottom: clamp(60px, 9vh, 95px);
             z-index: 3;
-            will-change: transform, opacity;
+            will-change:
+                transform,
+                opacity;
         }
 
         .status {
@@ -361,7 +376,8 @@
             padding: 8px 14px;
             color: var(--accent);
             background: rgba(7, 9, 13, 0.68);
-            border: 1px solid rgba(105, 240, 207, 0.24);
+            border:
+                1px solid rgba(105, 240, 207, 0.24);
             border-radius: 999px;
             font-size: 0.76rem;
             font-weight: 700;
@@ -373,13 +389,17 @@
             height: 8px;
             background: var(--accent);
             border-radius: 50%;
-            box-shadow:: 0 0 0 6px rgba(105, 240, 207, 0.12);
+            box-shadow:
+                0 0 0 6px
+                rgba(105, 240, 207, 0.12);
             animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
             50% {
-                box-shadow: 0 0 0 11px rgba(105, 240, 207, 0);
+                box-shadow:
+                    0 0 0 11px
+                    rgba(105, 240, 207, 0);
             }
         }
 
@@ -408,7 +428,8 @@
             margin: 23px 0 12px;
             color: #eef3f8;
             font-family: "Plus Jakarta Sans", sans-serif;
-            font-size: clamp(1.05rem, 2vw, 1.45rem);
+            font-size:
+                clamp(1.05rem, 2vw, 1.45rem);
             font-weight: 700;
         }
 
@@ -452,13 +473,15 @@
         .button-glass {
             color: #ffffff;
             background: rgba(7, 9, 13, 0.68);
-            border-color: rgba(255, 255, 255, 0.16);
+            border-color:
+                rgba(255, 255, 255, 0.16);
             backdrop-filter: blur(12px);
         }
 
         .button-glass:hover {
             color: var(--accent);
-            border-color: rgba(105, 240, 207, 0.45);
+            border-color:
+                rgba(105, 240, 207, 0.45);
             transform: translateY(-3px);
         }
 
@@ -493,7 +516,8 @@
             width: 18px;
             height: 29px;
             position: relative;
-            border: 1px solid rgba(255, 255, 255, 0.42);
+            border:
+                1px solid rgba(255, 255, 255, 0.42);
             border-radius: 999px;
         }
 
@@ -529,6 +553,7 @@
         /* Hero side cards */
 
         .mini-card {
+            min-width: 0;
             min-height: 0;
             padding: 30px;
             position: relative;
@@ -544,7 +569,8 @@
         }
 
         .mini-card:hover {
-            border-color: rgba(105, 240, 207, 0.35);
+            border-color:
+                rgba(105, 240, 207, 0.35);
             transform: translateY(-5px);
         }
 
@@ -555,7 +581,8 @@
             position: absolute;
             right: -70px;
             bottom: -70px;
-            background: rgba(105, 240, 207, 0.09);
+            background:
+                rgba(105, 240, 207, 0.09);
             border-radius: 50%;
         }
 
@@ -580,7 +607,8 @@
         .mini-card h2 {
             margin-top: 18px;
             font-family: "Plus Jakarta Sans", sans-serif;
-            font-size: clamp(1.05rem, 2.2vh, 1.4rem);
+            font-size:
+                clamp(1.05rem, 2.2vh, 1.4rem);
             line-height: 1.3;
         }
 
@@ -600,14 +628,15 @@
         .tag {
             padding: 6px 9px;
             color: var(--text);
-            background: rgba(255, 255, 255, 0.045);
+            background:
+                rgba(255, 255, 255, 0.045);
             border: 1px solid var(--border);
             border-radius: 999px;
             font-size: 0.68rem;
             font-weight: 600;
         }
 
-        /* Sections */
+        /* General sections */
 
         .section {
             padding: 105px 0;
@@ -633,7 +662,8 @@
         .section-title {
             max-width: 760px;
             font-family: "Plus Jakarta Sans", sans-serif;
-            font-size: clamp(2rem, 4.4vw, 3.8rem);
+            font-size:
+                clamp(2rem, 4.4vw, 3.8rem);
             line-height: 1.1;
             letter-spacing: -2.5px;
         }
@@ -653,7 +683,8 @@
         }
 
         .bento-card:hover {
-            border-color: rgba(105, 240, 207, 0.3);
+            border-color:
+                rgba(105, 240, 207, 0.3);
         }
 
         /* About */
@@ -703,11 +734,13 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
             gap: 16px;
         }
 
         .skill-card {
+            min-width: 0;
             padding: 25px;
             background: var(--surface);
             border: 1px solid var(--border);
@@ -716,7 +749,8 @@
         }
 
         .skill-card:hover {
-            border-color: rgba(105, 240, 207, 0.4);
+            border-color:
+                rgba(105, 240, 207, 0.4);
             transform: translateY(-5px);
         }
 
@@ -741,11 +775,13 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
             gap: 18px;
         }
 
         .project-card {
+            min-width: 0;
             min-height: 370px;
             display: flex;
             flex-direction: column;
@@ -764,7 +800,8 @@
         }
 
         .project-card:hover {
-            border-color: rgba(105, 240, 207, 0.4);
+            border-color:
+                rgba(105, 240, 207, 0.4);
             transform: translateY(-7px);
             box-shadow: var(--shadow);
         }
@@ -843,7 +880,8 @@
         }
 
         .experience-card:hover {
-            border-color: rgba(105, 240, 207, 0.35);
+            border-color:
+                rgba(105, 240, 207, 0.35);
         }
 
         .experience-period {
@@ -899,7 +937,8 @@
             max-width: 750px;
             margin: auto;
             font-family: "Plus Jakarta Sans", sans-serif;
-            font-size: clamp(2.1rem, 5vw, 4.5rem);
+            font-size:
+                clamp(2.1rem, 5vw, 4.5rem);
             line-height: 1.05;
             letter-spacing: -3px;
         }
@@ -945,7 +984,8 @@
 
         .direct-contact a:hover {
             color: var(--accent);
-            border-color: rgba(105, 240, 207, 0.4);
+            border-color:
+                rgba(105, 240, 207, 0.4);
         }
 
         .email-copy {
@@ -968,7 +1008,7 @@
             font-size: 0.78rem;
         }
 
-        /* Reveal animation */
+        /* Scroll reveal */
 
         .reveal {
             opacity: 0;
@@ -983,37 +1023,17 @@
             transform: translateY(0);
         }
 
-        /* Tablet */
+        /* Tablet and mobile layout */
 
-        @media (max-width: 1040px) {
+        @media (max-width: 1100px) {
+            .container {
+                width: calc(100% - 28px);
+            }
+
             .desktop-phone {
                 display: none;
             }
 
-            .hero {
-                min-height: 165vh;
-            }
-
-            .hero-bento {
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: 1fr auto;
-            }
-
-            .hero-main {
-                grid-column: 1 / -1;
-                grid-row: auto;
-            }
-
-            .mini-card {
-                min-height: 180px;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 850px) {
             .menu-button {
                 display: grid;
             }
@@ -1022,17 +1042,23 @@
                 display: none;
                 position: absolute;
                 top: 78px;
-                left: 20px;
-                right: 20px;
+                left: 14px;
+                right: 14px;
                 flex-direction: column;
                 align-items: stretch;
-                gap: 5px;
+                gap: 4px;
                 padding: 18px;
-                background: var(--glass);
+                background:
+                    rgba(7, 9, 13, 0.97);
                 border: 1px solid var(--border);
                 border-radius: 16px;
-                backdrop-filter: blur(20px);
                 box-shadow: var(--shadow);
+                backdrop-filter: blur(20px);
+            }
+
+            body.light .nav-links {
+                background:
+                    rgba(255, 255, 255, 0.98);
             }
 
             .nav-links.open {
@@ -1040,7 +1066,8 @@
             }
 
             .nav-links a {
-                padding: 13px;
+                width: 100%;
+                padding: 14px;
                 text-align: center;
             }
 
@@ -1052,30 +1079,11 @@
                 display: block;
                 margin-top: 6px;
                 color: var(--accent) !important;
-                background: rgba(105, 240, 207, 0.08);
-                border: 1px solid rgba(105, 240, 207, 0.25);
+                background:
+                    rgba(105, 240, 207, 0.08);
+                border:
+                    1px solid rgba(105, 240, 207, 0.25);
                 border-radius: 10px;
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-top {
-                align-items: flex-start;
-                flex-direction: column;
-            }
-        }
-
-        /* Mobile */
-
-        @media (max-width: 620px) {
-            .container {
-                width: min(100% - 26px, 1180px);
             }
 
             .hero {
@@ -1088,16 +1096,19 @@
             }
 
             .hero-bento {
-                height: calc(100svh - 95px);
-                min-height: 650px;
+                width: 100%;
+                height: calc(100svh - 98px);
+                min-height: 680px;
                 display: block;
-                margin-top: 82px;
+                margin-top: 84px;
             }
 
             .hero-main {
                 width: 100%;
                 height: 100%;
-                min-height: 650px;
+                min-height: 680px;
+                grid-column: auto;
+                grid-row: auto;
             }
 
             .hero-bento > .mini-card {
@@ -1105,56 +1116,153 @@
             }
 
             .hero-photo {
-                object-position: 60% top;
+                object-position: 62% top;
             }
 
             .hero-photo-overlay {
                 background:
                     linear-gradient(
                         0deg,
-                        rgba(5, 7, 10, 0.96) 2%,
-                        rgba(5, 7, 10, 0.76) 47%,
-                        rgba(5, 7, 10, 0.02) 100%
+                        rgba(5, 7, 10, 0.97) 2%,
+                        rgba(5, 7, 10, 0.82) 48%,
+                        rgba(5, 7, 10, 0.08) 100%
                     );
             }
 
             .hero-content {
-                left: 25px;
-                right: 25px;
-                bottom: 65px;
+                max-width: 700px;
+                left: 32px;
+                right: 32px;
+                bottom: 68px;
             }
 
             .hero h1 {
-                font-size: clamp(2.7rem, 13vw, 3.7rem);
+                max-width: 650px;
+                font-size:
+                    clamp(3rem, 9vw, 5rem);
+                line-height: 0.98;
                 letter-spacing: -3px;
             }
 
             .hero-role {
-                font-size: 0.98rem;
+                font-size: 1rem;
             }
 
             .hero-description {
-                font-size: 0.83rem;
+                max-width: 600px;
+                font-size: 0.88rem;
             }
 
-            .hero-actions .button,
-            .contact-actions .button {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-top {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        /* Phone layout */
+
+        @media (max-width: 600px) {
+            .container {
+                width: calc(100% - 20px);
+            }
+
+            .navbar .container {
+                width: calc(100% - 28px);
+            }
+
+            .hero {
+                min-height: 145vh;
+            }
+
+            .hero-bento {
+                height: calc(100svh - 90px);
+                min-height: 650px;
+                margin-top: 80px;
+            }
+
+            .hero-main {
+                min-height: 650px;
+                border-radius: 20px;
+            }
+
+            .hero-photo {
+                object-position: 62% top;
+            }
+
+            .hero-content {
+                left: 21px;
+                right: 21px;
+                bottom: 62px;
+            }
+
+            .status {
+                max-width: 100%;
+                padding: 7px 10px;
+                font-size: 0.63rem;
+                white-space: nowrap;
+            }
+
+            .hero h1 {
+                font-size:
+                    clamp(2.45rem, 13vw, 3.6rem);
+                line-height: 0.96;
+                letter-spacing: -2.5px;
+            }
+
+            .hero-role {
+                margin-top: 18px;
+                font-size: 0.86rem;
+                line-height: 1.4;
+            }
+
+            .hero-description {
+                margin-top: 10px;
+                font-size: 0.76rem;
+                line-height: 1.55;
+            }
+
+            .hero-actions {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 9px;
+                margin-top: 20px;
+            }
+
+            .hero-actions .button {
                 width: 100%;
+                padding: 11px 15px;
             }
 
             .hero-frame {
-                left: 22px;
-                bottom: 18px;
+                left: 20px;
+                bottom: 16px;
+                font-size: 0.56rem;
             }
 
             .hero-scroll-text {
-                right: 22px;
-                bottom: 14px;
+                right: 20px;
+                bottom: 12px;
+                font-size: 0.56rem;
             }
 
-            .facts-grid,
-            .skills-grid {
+            .scroll-wheel {
+                width: 16px;
+                height: 26px;
+            }
+
+            .skills-grid,
+            .projects-grid,
+            .facts-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .experience-card {
+                grid-template-columns: 1fr;
+                gap: 12px;
             }
 
             .section {
@@ -1166,14 +1274,19 @@
             }
 
             .bento-card,
+            .skill-card,
             .project-card,
             .experience-card {
-                padding: 25px;
+                padding: 24px;
             }
 
-            .experience-card {
+            .contact-actions {
+                display: grid;
                 grid-template-columns: 1fr;
-                gap: 12px;
+            }
+
+            .contact-actions .button {
+                width: 100%;
             }
 
             .direct-contact {
@@ -1209,8 +1322,11 @@
 <body>
 
 <div class="page-progress" aria-hidden="true">
-    <div class="page-progress-bar" id="pageProgressBar"></div>
+    <div class="page-progress-bar"
+         id="pageProgressBar"></div>
 </div>
+
+<!-- Navigation -->
 
 <nav class="navbar" id="navbar">
     <div class="container nav-inner">
@@ -1225,7 +1341,8 @@
             <a href="#experience">Experience</a>
             <a href="#contact">Contact</a>
 
-            <a href="tel:+918179869832" class="phone-link">
+            <a href="tel:+918179869832"
+               class="phone-link">
                 ☎ +91 81798 69832
             </a>
         </div>
@@ -1253,6 +1370,8 @@
     </div>
 </nav>
 
+<!-- Hero -->
+
 <header class="hero" id="home">
 
     <div class="hero-sticky">
@@ -1260,7 +1379,6 @@
 
             <article class="hero-main">
 
-                <!-- Correct GitHub filename -->
                 <img src="vamshi-profile.jpg"
                      alt="Vamshi Dhar Reddy - QA Automation Engineer"
                      class="hero-photo"
@@ -1269,7 +1387,8 @@
                 <div class="hero-photo-overlay"></div>
                 <div class="hero-colour-overlay"></div>
 
-                <div class="hero-content" id="heroContent">
+                <div class="hero-content"
+                     id="heroContent">
 
                     <div class="status">
                         <span class="status-dot"></span>
@@ -1278,7 +1397,9 @@
 
                     <h1>
                         Quality in every
-                        <span class="gradient-text">release.</span>
+                        <span class="gradient-text">
+                            release.
+                        </span>
                     </h1>
 
                     <p class="hero-role">
@@ -1286,10 +1407,10 @@
                     </p>
 
                     <p class="hero-description">
-                        I build reliable testing solutions for web, mobile
-                        and API applications using Selenium Java, TestNG,
-                        Cucumber BDD, Appium, REST Assured and modern
-                        automation tools.
+                        I build reliable testing solutions for web,
+                        mobile and API applications using Selenium Java,
+                        TestNG, Cucumber BDD, Appium, REST Assured and
+                        modern automation tools.
                     </p>
 
                     <div class="hero-actions">
@@ -1313,7 +1434,8 @@
                     / 100
                 </div>
 
-                <div class="hero-scroll-text" id="scrollPrompt">
+                <div class="hero-scroll-text"
+                     id="scrollPrompt">
                     Scroll
                     <span class="scroll-wheel"></span>
                 </div>
@@ -1321,21 +1443,32 @@
             </article>
 
             <article class="mini-card">
-                <span class="card-label">Experience</span>
+                <span class="card-label">
+                    Experience
+                </span>
 
-                <strong class="experience-number">3.8+</strong>
+                <strong class="experience-number">
+                    3.8+
+                </strong>
 
-                <h2>Years delivering reliable software.</h2>
+                <h2>
+                    Years delivering reliable software.
+                </h2>
 
                 <p>
-                    Web, mobile, API, database and performance testing.
+                    Web, mobile, API, database and
+                    performance testing.
                 </p>
             </article>
 
             <article class="mini-card">
-                <span class="card-label">Core Stack</span>
+                <span class="card-label">
+                    Core Stack
+                </span>
 
-                <h2>Automation designed for maintainability.</h2>
+                <h2>
+                    Automation designed for maintainability.
+                </h2>
 
                 <div class="stack-list">
                     <span class="tag">Selenium</span>
@@ -1358,6 +1491,8 @@
 
 <main>
 
+    <!-- About -->
+
     <section class="section" id="about">
         <div class="container">
 
@@ -1366,13 +1501,15 @@
                     <p class="eyebrow">About Me</p>
 
                     <h2 class="section-title">
-                        Testing products with a user-first and risk-focused mindset.
+                        Testing products with a user-first
+                        and risk-focused mindset.
                     </h2>
                 </div>
 
                 <p class="section-description">
-                    Based in Hyderabad and available to join immediately for
-                    Software Test Engineer, QA Automation Engineer and SDET roles.
+                    Based in Hyderabad and available to join
+                    immediately for Software Test Engineer,
+                    QA Automation Engineer and SDET roles.
                 </p>
             </div>
 
@@ -1380,28 +1517,34 @@
 
                 <article class="bento-card about-copy">
                     <p>
-                        I am <strong>Vamshi Dhar Reddy</strong>, a Software Test
-                        Engineer with more than <strong>3.8 years of experience</strong>
-                        in manual testing, automation, API testing, mobile testing
-                        and performance validation.
+                        I am
+                        <strong>Vamshi Dhar Reddy</strong>,
+                        a Software Test Engineer with more than
+                        <strong>3.8 years of experience</strong>
+                        in manual testing, automation, API testing,
+                        mobile testing and performance validation.
                     </p>
 
                     <br>
 
                     <p>
-                        I have worked on high-traffic e-commerce applications,
-                        omni-channel retail workflows, Android and iOS applications,
-                        order-management platforms and transaction-based systems.
+                        I have worked on high-traffic e-commerce
+                        applications, omni-channel retail workflows,
+                        Android and iOS applications, order-management
+                        platforms and transaction-based systems.
                     </p>
 
                     <br>
 
                     <p>
                         My primary automation stack includes
-                        <strong>Selenium WebDriver, Java, TestNG, Maven,
-                        Cucumber BDD and Page Object Model</strong>. I also
-                        have experience with Postman, REST Assured, Appium,
-                        JMeter, Jenkins, Git and basic SQL.
+                        <strong>
+                            Selenium WebDriver, Java, TestNG, Maven,
+                            Cucumber BDD and Page Object Model.
+                        </strong>
+                        I also have experience with Postman,
+                        REST Assured, Appium, JMeter, Jenkins,
+                        Git and basic SQL.
                     </p>
                 </article>
 
@@ -1435,6 +1578,8 @@
         </div>
     </section>
 
+    <!-- Skills -->
+
     <section class="section" id="skills">
         <div class="container">
 
@@ -1443,7 +1588,8 @@
                     <p class="eyebrow">Technical Skills</p>
 
                     <h2 class="section-title">
-                        A practical QA toolkit covering the testing lifecycle.
+                        A practical QA toolkit covering
+                        the testing lifecycle.
                     </h2>
                 </div>
             </div>
@@ -1453,60 +1599,88 @@
                 <article class="skill-card reveal">
                     <span class="skill-number">01</span>
                     <h3>Web Automation</h3>
-                    <p>Selenium WebDriver, Java, TestNG, Maven and POM.</p>
+                    <p>
+                        Selenium WebDriver, Java, TestNG,
+                        Maven and Page Object Model.
+                    </p>
                 </article>
 
                 <article class="skill-card reveal">
                     <span class="skill-number">02</span>
                     <h3>BDD Framework</h3>
-                    <p>Cucumber, feature files, runners and step definitions.</p>
+                    <p>
+                        Cucumber, feature files, scenarios,
+                        runners and step definitions.
+                    </p>
                 </article>
 
                 <article class="skill-card reveal">
                     <span class="skill-number">03</span>
                     <h3>API Testing</h3>
-                    <p>Postman, REST Assured and response validation.</p>
+                    <p>
+                        Postman, REST Assured, HTTP methods
+                        and response validation.
+                    </p>
                 </article>
 
                 <article class="skill-card reveal">
                     <span class="skill-number">04</span>
                     <h3>Mobile Testing</h3>
-                    <p>Appium, Android Studio, ADB and UiAutomator2.</p>
+                    <p>
+                        Appium, Android Studio, ADB
+                        and UiAutomator2.
+                    </p>
                 </article>
 
                 <article class="skill-card reveal">
                     <span class="skill-number">05</span>
                     <h3>Modern Automation</h3>
-                    <p>Working knowledge of Playwright and Cypress.</p>
+                    <p>
+                        Working knowledge of Playwright
+                        and Cypress.
+                    </p>
                 </article>
 
                 <article class="skill-card reveal">
                     <span class="skill-number">06</span>
                     <h3>Performance Testing</h3>
-                    <p>JMeter for load and peak-traffic validation.</p>
+                    <p>
+                        JMeter for load and peak-traffic
+                        validation.
+                    </p>
                 </article>
 
                 <article class="skill-card reveal">
                     <span class="skill-number">07</span>
                     <h3>CI/CD Tools</h3>
-                    <p>Jenkins, Git, GitHub and Maven.</p>
+                    <p>
+                        Jenkins, Git, GitHub and Maven.
+                    </p>
                 </article>
 
                 <article class="skill-card reveal">
                     <span class="skill-number">08</span>
                     <h3>Database Testing</h3>
-                    <p>Basic SQL for backend data validation.</p>
+                    <p>
+                        Basic SQL for backend data
+                        and transaction validation.
+                    </p>
                 </article>
 
                 <article class="skill-card reveal">
                     <span class="skill-number">09</span>
                     <h3>QA Processes</h3>
-                    <p>Functional, regression, integration and Agile testing.</p>
+                    <p>
+                        Functional, regression, smoke,
+                        integration and Agile testing.
+                    </p>
                 </article>
 
             </div>
         </div>
     </section>
+
+    <!-- Projects -->
 
     <section class="section" id="projects">
         <div class="container">
@@ -1516,7 +1690,8 @@
                     <p class="eyebrow">Featured Projects</p>
 
                     <h2 class="section-title">
-                        Projects where quality supported the customer experience.
+                        Projects where quality supported
+                        the customer experience.
                     </h2>
                 </div>
             </div>
@@ -1525,14 +1700,18 @@
 
                 <article class="project-card reveal">
                     <div>
-                        <span class="project-number">PROJECT 01</span>
+                        <span class="project-number">
+                            PROJECT 01
+                        </span>
+
                         <div class="project-icon">FI</div>
 
                         <h3>Fossil India</h3>
 
                         <p>
-                            Tested product catalogues, payments, order creation,
-                            returns, BOPIS and inventory synchronization.
+                            Tested product catalogues, payments,
+                            order creation, returns, BOPIS and
+                            inventory synchronization.
                         </p>
                     </div>
 
@@ -1547,14 +1726,18 @@
                 <article class="project-card reveal"
                          style="--project-glow: rgba(91,140,255,.16);">
                     <div>
-                        <span class="project-number">PROJECT 02</span>
+                        <span class="project-number">
+                            PROJECT 02
+                        </span>
+
                         <div class="project-icon">WS</div>
 
                         <h3>Watch Station India</h3>
 
                         <p>
-                            Validated storefront, admin modules, order management,
-                            coupon rules and peak-sale platform stability.
+                            Validated storefront, admin modules,
+                            order management, coupon rules and
+                            peak-sale platform stability.
                         </p>
                     </div>
 
@@ -1569,14 +1752,19 @@
                 <article class="project-card reveal"
                          style="--project-glow: rgba(168,85,247,.15);">
                     <div>
-                        <span class="project-number">PROJECT 03</span>
+                        <span class="project-number">
+                            PROJECT 03
+                        </span>
+
                         <div class="project-icon">DA</div>
 
-                        <h3>Decathlon – All For Sports</h3>
+                        <h3>
+                            Decathlon – All For Sports
+                        </h3>
 
                         <p>
-                            Performed functional, regression, API,
-                            cross-browser and mobile testing.
+                            Performed functional, regression,
+                            API, cross-browser and mobile testing.
                         </p>
                     </div>
 
@@ -1591,14 +1779,18 @@
                 <article class="project-card reveal"
                          style="--project-glow: rgba(249,115,22,.14);">
                     <div>
-                        <span class="project-number">PROJECT 04</span>
+                        <span class="project-number">
+                            PROJECT 04
+                        </span>
+
                         <div class="project-icon">RA</div>
 
                         <h3>Reval Retail Mobile App</h3>
 
                         <p>
-                            Developed reusable Appium automation using Java,
-                            TestNG and a hybrid Page Object Model.
+                            Developed reusable Appium automation
+                            using Java, TestNG and a hybrid
+                            Page Object Model.
                         </p>
                     </div>
 
@@ -1614,6 +1806,8 @@
         </div>
     </section>
 
+    <!-- Experience -->
+
     <section class="section" id="experience">
         <div class="container">
 
@@ -1622,7 +1816,8 @@
                     <p class="eyebrow">Work Experience</p>
 
                     <h2 class="section-title">
-                        Professional experience in software quality assurance.
+                        Professional experience in
+                        software quality assurance.
                     </h2>
                 </div>
             </div>
@@ -1635,18 +1830,39 @@
                     </div>
 
                     <div class="experience-content">
-                        <h3>Revalsys Technologies Pvt. Ltd.</h3>
+                        <h3>
+                            Revalsys Technologies Pvt. Ltd.
+                        </h3>
 
                         <p class="experience-role">
                             Software Test Engineer
                         </p>
 
                         <ul>
-                            <li>Performed functional, regression and integration testing.</li>
-                            <li>Automated web scenarios using Selenium Java and TestNG.</li>
-                            <li>Created mobile automation using Appium.</li>
-                            <li>Validated APIs, databases and order workflows.</li>
-                            <li>Performed JMeter testing during peak sales.</li>
+                            <li>
+                                Performed functional, regression
+                                and integration testing.
+                            </li>
+
+                            <li>
+                                Automated web scenarios using
+                                Selenium Java and TestNG.
+                            </li>
+
+                            <li>
+                                Created mobile automation
+                                using Appium.
+                            </li>
+
+                            <li>
+                                Validated APIs, databases
+                                and order workflows.
+                            </li>
+
+                            <li>
+                                Performed JMeter testing
+                                during peak sales.
+                            </li>
                         </ul>
                     </div>
                 </article>
@@ -1657,18 +1873,39 @@
                     </div>
 
                     <div class="experience-content">
-                        <h3>Enhops Solutions Pvt. Ltd.</h3>
+                        <h3>
+                            Enhops Solutions Pvt. Ltd.
+                        </h3>
 
                         <p class="experience-role">
                             Junior QA Engineer
                         </p>
 
                         <ul>
-                            <li>Executed functional and regression test cases.</li>
-                            <li>Performed API testing using Postman.</li>
-                            <li>Conducted cross-browser and mobile testing.</li>
-                            <li>Logged and tracked defects using JIRA.</li>
-                            <li>Collaborated with Agile development teams.</li>
+                            <li>
+                                Executed functional and
+                                regression test cases.
+                            </li>
+
+                            <li>
+                                Performed API testing
+                                using Postman.
+                            </li>
+
+                            <li>
+                                Conducted cross-browser
+                                and mobile testing.
+                            </li>
+
+                            <li>
+                                Logged and tracked defects
+                                using JIRA.
+                            </li>
+
+                            <li>
+                                Collaborated with Agile
+                                development teams.
+                            </li>
                         </ul>
                     </div>
                 </article>
@@ -1676,6 +1913,8 @@
             </div>
         </div>
     </section>
+
+    <!-- Contact -->
 
     <section class="section" id="contact">
         <div class="container">
@@ -1685,12 +1924,15 @@
 
                 <h2>
                     Let’s build software users can
-                    <span class="gradient-text">trust.</span>
+                    <span class="gradient-text">
+                        trust.
+                    </span>
                 </h2>
 
                 <p>
                     I am available for QA Automation Engineer,
-                    Software Test Engineer, SDET and Test Engineer roles.
+                    Software Test Engineer, SDET and
+                    Test Engineer roles.
                 </p>
 
                 <div class="contact-actions">
@@ -1728,7 +1970,9 @@
                         ✉ devireddyv22@gmail.com
                     </a>
 
-                    <span>⌖ Hyderabad, India</span>
+                    <span>
+                        ⌖ Hyderabad, India
+                    </span>
                 </div>
 
                 <button class="email-copy"
@@ -1748,17 +1992,36 @@
 </footer>
 
 <script>
-    const navbar = document.getElementById("navbar");
-    const navLinksContainer = document.getElementById("navLinks");
-    const menuButton = document.getElementById("menuButton");
-    const themeButton = document.getElementById("themeButton");
-    const copyEmailButton = document.getElementById("copyEmail");
+    const navbar =
+        document.getElementById("navbar");
 
-    const heroSection = document.getElementById("home");
-    const heroPhoto = document.getElementById("heroPhoto");
-    const heroContent = document.getElementById("heroContent");
-    const frameNumber = document.getElementById("frameNumber");
-    const scrollPrompt = document.getElementById("scrollPrompt");
+    const navLinksContainer =
+        document.getElementById("navLinks");
+
+    const menuButton =
+        document.getElementById("menuButton");
+
+    const themeButton =
+        document.getElementById("themeButton");
+
+    const copyEmailButton =
+        document.getElementById("copyEmail");
+
+    const heroSection =
+        document.getElementById("home");
+
+    const heroPhoto =
+        document.getElementById("heroPhoto");
+
+    const heroContent =
+        document.getElementById("heroContent");
+
+    const frameNumber =
+        document.getElementById("frameNumber");
+
+    const scrollPrompt =
+        document.getElementById("scrollPrompt");
+
     const pageProgressBar =
         document.getElementById("pageProgressBar");
 
@@ -1770,10 +2033,12 @@
             window.scrollY > 20
         );
 
-        const heroStart = heroSection.offsetTop;
+        const heroStart =
+            heroSection.offsetTop;
 
         const heroDistance = Math.max(
-            heroSection.offsetHeight - window.innerHeight,
+            heroSection.offsetHeight -
+            window.innerHeight,
             1
         );
 
@@ -1781,7 +2046,10 @@
             window.scrollY - heroStart;
 
         const heroProgress = Math.min(
-            Math.max(heroScrolled / heroDistance, 0),
+            Math.max(
+                heroScrolled / heroDistance,
+                0
+            ),
             1
         );
 
@@ -1812,7 +2080,12 @@
             String(1 - heroProgress * 0.3);
 
         scrollPrompt.style.opacity =
-            String(Math.max(0, 1 - heroProgress * 3));
+            String(
+                Math.max(
+                    0,
+                    1 - heroProgress * 3
+                )
+            );
 
         const documentHeight = Math.max(
             document.documentElement.scrollHeight -
@@ -1831,7 +2104,10 @@
 
     function requestScrollAnimation() {
         if (!animationRequested) {
-            requestAnimationFrame(updateScrollEffects);
+            requestAnimationFrame(
+                updateScrollEffects
+            );
+
             animationRequested = true;
         }
     }
@@ -1864,7 +2140,10 @@
         .querySelectorAll(".nav-links a")
         .forEach(link => {
             link.addEventListener("click", () => {
-                navLinksContainer.classList.remove("open");
+                navLinksContainer
+                    .classList
+                    .remove("open");
+
                 menuButton.textContent = "☰";
 
                 menuButton.setAttribute(
@@ -1875,10 +2154,14 @@
         });
 
     themeButton.addEventListener("click", () => {
-        document.body.classList.toggle("light");
+        document.body
+            .classList
+            .toggle("light");
 
         const isLight =
-            document.body.classList.contains("light");
+            document.body
+                .classList
+                .contains("light");
 
         themeButton.textContent =
             isLight ? "☀" : "◐";
@@ -1891,7 +2174,9 @@
                 copyEmailButton.dataset.email;
 
             try {
-                await navigator.clipboard.writeText(email);
+                await navigator
+                    .clipboard
+                    .writeText(email);
 
                 copyEmailButton.textContent =
                     "Email copied successfully ✓";
@@ -1912,8 +2197,12 @@
             entries => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                        revealObserver.unobserve(entry.target);
+                        entry.target
+                            .classList
+                            .add("visible");
+
+                        revealObserver
+                            .unobserve(entry.target);
                     }
                 });
             },
@@ -1957,7 +2246,8 @@
                 });
             },
             {
-                rootMargin: "-30% 0px -60% 0px"
+                rootMargin:
+                    "-30% 0px -60% 0px"
             }
         );
 
