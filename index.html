@@ -55,8 +55,16 @@
             min-height: 100vh;
             color: var(--text);
             background:
-                radial-gradient(circle at 10% 10%, rgba(105, 240, 207, 0.08), transparent 24%),
-                radial-gradient(circle at 90% 20%, rgba(91, 140, 255, 0.09), transparent 25%),
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(105, 240, 207, 0.08),
+                    transparent 24%
+                ),
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(91, 140, 255, 0.09),
+                    transparent 25%
+                ),
                 var(--bg);
             font-family: "Inter", sans-serif;
             line-height: 1.7;
@@ -82,7 +90,7 @@
             margin: auto;
         }
 
-        /* Page progress bar */
+        /* Page progress */
 
         .page-progress {
             width: 100%;
@@ -97,7 +105,11 @@
         .page-progress-bar {
             width: 0;
             height: 100%;
-            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            background: linear-gradient(
+                90deg,
+                var(--accent),
+                var(--accent-2)
+            );
             box-shadow: 0 0 15px rgba(105, 240, 207, 0.45);
         }
 
@@ -238,7 +250,7 @@
             display: none;
         }
 
-        /* Scroll-driven hero */
+        /* Scroll hero */
 
         .hero {
             min-height: 180vh;
@@ -277,12 +289,15 @@
             isolation: isolate;
         }
 
+        /* Corrected image layering */
+
         .hero-photo {
             width: 100%;
             height: 100%;
+            display: block;
             position: absolute;
             inset: 0;
-            z-index: -3;
+            z-index: 0;
             object-fit: cover;
             object-position: center 18%;
             transform: scale(1.02);
@@ -292,36 +307,37 @@
         .hero-photo-overlay {
             position: absolute;
             inset: 0;
-            z-index: -2;
+            z-index: 1;
+            pointer-events: none;
             background:
                 linear-gradient(
                     90deg,
-                    rgba(5, 7, 10, 0.99) 0%,
-                    rgba(5, 7, 10, 0.92) 40%,
-                    rgba(5, 7, 10, 0.32) 72%,
-                    rgba(5, 7, 10, 0.12) 100%
+                    rgba(5, 7, 10, 0.88) 0%,
+                    rgba(5, 7, 10, 0.68) 39%,
+                    rgba(5, 7, 10, 0.15) 70%,
+                    transparent 100%
                 ),
                 linear-gradient(
                     0deg,
-                    rgba(5, 7, 10, 0.97) 0%,
-                    transparent 65%
+                    rgba(5, 7, 10, 0.75) 0%,
+                    transparent 58%
                 );
         }
 
         .hero-colour-overlay {
             position: absolute;
             inset: 0;
-            z-index: -1;
+            z-index: 2;
             pointer-events: none;
             background:
                 radial-gradient(
-                    circle at 80% 18%,
-                    rgba(91, 140, 255, 0.18),
+                    circle at 82% 20%,
+                    rgba(91, 140, 255, 0.12),
                     transparent 30%
                 ),
                 linear-gradient(
                     120deg,
-                    rgba(105, 240, 207, 0.07),
+                    rgba(105, 240, 207, 0.04),
                     transparent 45%
                 );
         }
@@ -357,7 +373,7 @@
             height: 8px;
             background: var(--accent);
             border-radius: 50%;
-            box-shadow: 0 0 0 6px rgba(105, 240, 207, 0.12);
+            box-shadow:: 0 0 0 6px rgba(105, 240, 207, 0.12);
             animation: pulse 2s infinite;
         }
 
@@ -379,7 +395,11 @@
 
         .gradient-text {
             color: transparent;
-            background: linear-gradient(100deg, var(--accent), #a7c5ff);
+            background: linear-gradient(
+                100deg,
+                var(--accent),
+                #a7c5ff
+            );
             background-clip: text;
             -webkit-background-clip: text;
         }
@@ -394,7 +414,7 @@
 
         .hero-description {
             max-width: 620px;
-            color: #bdc6d3;
+            color: #d1d8e2;
             font-size: 0.98rem;
         }
 
@@ -513,7 +533,11 @@
             padding: 30px;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(145deg, var(--surface-2), var(--surface));
+            background: linear-gradient(
+                145deg,
+                var(--surface-2),
+                var(--surface)
+            );
             border: 1px solid var(--border);
             border-radius: var(--radius);
             transition: 0.3s;
@@ -583,7 +607,7 @@
             font-weight: 600;
         }
 
-        /* General sections */
+        /* Sections */
 
         .section {
             padding: 105px 0;
@@ -729,7 +753,11 @@
             padding: 34px;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(145deg, var(--surface-2), var(--surface));
+            background: linear-gradient(
+                145deg,
+                var(--surface-2),
+                var(--surface)
+            );
             border: 1px solid var(--border);
             border-radius: var(--radius);
             transition: 0.35s;
@@ -748,7 +776,10 @@
             position: absolute;
             top: -120px;
             right: -100px;
-            background: var(--project-glow, rgba(105, 240, 207, 0.13));
+            background: var(
+                --project-glow,
+                rgba(105, 240, 207, 0.13)
+            );
             border-radius: 50%;
         }
 
@@ -765,7 +796,11 @@
             place-items: center;
             margin: 45px 0 25px;
             color: #07100f;
-            background: linear-gradient(135deg, var(--accent), #9ebcff);
+            background: linear-gradient(
+                135deg,
+                var(--accent),
+                #9ebcff
+            );
             border-radius: 17px;
             font-size: 1.3rem;
             font-weight: 800;
@@ -849,7 +884,11 @@
             padding: clamp(35px, 7vw, 80px);
             text-align: center;
             background:
-                radial-gradient(circle at top, rgba(105, 240, 207, 0.15), transparent 45%),
+                radial-gradient(
+                    circle at top,
+                    rgba(105, 240, 207, 0.15),
+                    transparent 45%
+                ),
                 var(--surface);
             border: 1px solid var(--border);
             border-radius: 32px;
@@ -929,12 +968,14 @@
             font-size: 0.78rem;
         }
 
-        /* Reveal */
+        /* Reveal animation */
 
         .reveal {
             opacity: 0;
             transform: translateY(25px);
-            transition: opacity 0.75s ease, transform 0.75s ease;
+            transition:
+                opacity 0.75s ease,
+                transform 0.75s ease;
         }
 
         .reveal.visible {
@@ -1064,16 +1105,16 @@
             }
 
             .hero-photo {
-                object-position: 58% top;
+                object-position: 60% top;
             }
 
             .hero-photo-overlay {
                 background:
                     linear-gradient(
                         0deg,
-                        rgba(5, 7, 10, 0.99) 4%,
-                        rgba(5, 7, 10, 0.87) 48%,
-                        rgba(5, 7, 10, 0.04) 100%
+                        rgba(5, 7, 10, 0.96) 2%,
+                        rgba(5, 7, 10, 0.76) 47%,
+                        rgba(5, 7, 10, 0.02) 100%
                     );
             }
 
@@ -1219,8 +1260,9 @@
 
             <article class="hero-main">
 
+                <!-- Correct GitHub filename -->
                 <img src="vamshi-profile.jpg"
-                     alt="Vamshi Dhar Reddy"
+                     alt="Vamshi Dhar Reddy - QA Automation Engineer"
                      class="hero-photo"
                      id="heroPhoto">
 
@@ -1417,13 +1459,13 @@
                 <article class="skill-card reveal">
                     <span class="skill-number">02</span>
                     <h3>BDD Framework</h3>
-                    <p>Cucumber, feature files, scenarios, runners and step definitions.</p>
+                    <p>Cucumber, feature files, runners and step definitions.</p>
                 </article>
 
                 <article class="skill-card reveal">
                     <span class="skill-number">03</span>
                     <h3>API Testing</h3>
-                    <p>Postman, REST Assured, HTTP methods and response validation.</p>
+                    <p>Postman, REST Assured and response validation.</p>
                 </article>
 
                 <article class="skill-card reveal">
@@ -1459,7 +1501,7 @@
                 <article class="skill-card reveal">
                     <span class="skill-number">09</span>
                     <h3>QA Processes</h3>
-                    <p>Functional, regression, smoke, integration and Agile testing.</p>
+                    <p>Functional, regression, integration and Agile testing.</p>
                 </article>
 
             </div>
@@ -1503,7 +1545,7 @@
                 </article>
 
                 <article class="project-card reveal"
-                         style="--project-glow: rgba(91,140,255,.16)">
+                         style="--project-glow: rgba(91,140,255,.16);">
                     <div>
                         <span class="project-number">PROJECT 02</span>
                         <div class="project-icon">WS</div>
@@ -1525,7 +1567,7 @@
                 </article>
 
                 <article class="project-card reveal"
-                         style="--project-glow: rgba(168,85,247,.15)">
+                         style="--project-glow: rgba(168,85,247,.15);">
                     <div>
                         <span class="project-number">PROJECT 03</span>
                         <div class="project-icon">DA</div>
@@ -1547,7 +1589,7 @@
                 </article>
 
                 <article class="project-card reveal"
-                         style="--project-glow: rgba(249,115,22,.14)">
+                         style="--project-glow: rgba(249,115,22,.14);">
                     <div>
                         <span class="project-number">PROJECT 04</span>
                         <div class="project-icon">RA</div>
@@ -1599,11 +1641,6 @@
                             Software Test Engineer
                         </p>
 
-                        <p>
-                            Worked on e-commerce, retail, mobile and
-                            transaction-based applications.
-                        </p>
-
                         <ul>
                             <li>Performed functional, regression and integration testing.</li>
                             <li>Automated web scenarios using Selenium Java and TestNG.</li>
@@ -1624,11 +1661,6 @@
 
                         <p class="experience-role">
                             Junior QA Engineer
-                        </p>
-
-                        <p>
-                            Worked on Decathlon – All For Sports across
-                            web, Android and iOS applications.
                         </p>
 
                         <ul>
@@ -1727,20 +1759,26 @@
     const heroContent = document.getElementById("heroContent");
     const frameNumber = document.getElementById("frameNumber");
     const scrollPrompt = document.getElementById("scrollPrompt");
-    const pageProgressBar = document.getElementById("pageProgressBar");
+    const pageProgressBar =
+        document.getElementById("pageProgressBar");
 
     let animationRequested = false;
 
     function updateScrollEffects() {
-        navbar.classList.toggle("scrolled", window.scrollY > 20);
+        navbar.classList.toggle(
+            "scrolled",
+            window.scrollY > 20
+        );
 
         const heroStart = heroSection.offsetTop;
+
         const heroDistance = Math.max(
             heroSection.offsetHeight - window.innerHeight,
             1
         );
 
-        const heroScrolled = window.scrollY - heroStart;
+        const heroScrolled =
+            window.scrollY - heroStart;
 
         const heroProgress = Math.min(
             Math.max(heroScrolled / heroDistance, 0),
@@ -1749,35 +1787,44 @@
 
         const frame = Math.max(
             1,
-            Math.min(100, Math.round(heroProgress * 99) + 1)
+            Math.min(
+                100,
+                Math.round(heroProgress * 99) + 1
+            )
         );
 
-        frameNumber.textContent = String(frame).padStart(3, "0");
+        frameNumber.textContent =
+            String(frame).padStart(3, "0");
 
-        const photoScale = 1.02 + heroProgress * 0.22;
-        const photoMovement = heroProgress * -4;
+        const photoScale =
+            1.02 + heroProgress * 0.2;
+
+        const photoMovement =
+            heroProgress * -3;
 
         heroPhoto.style.transform =
             `scale(${photoScale}) translateY(${photoMovement}%)`;
 
         heroContent.style.transform =
-            `translateY(${heroProgress * -42}px)`;
+            `translateY(${heroProgress * -38}px)`;
 
         heroContent.style.opacity =
-            String(1 - heroProgress * 0.35);
+            String(1 - heroProgress * 0.3);
 
         scrollPrompt.style.opacity =
             String(Math.max(0, 1 - heroProgress * 3));
 
         const documentHeight = Math.max(
-            document.documentElement.scrollHeight - window.innerHeight,
+            document.documentElement.scrollHeight -
+            window.innerHeight,
             1
         );
 
         const pageProgress =
             (window.scrollY / documentHeight) * 100;
 
-        pageProgressBar.style.width = `${pageProgress}%`;
+        pageProgressBar.style.width =
+            `${pageProgress}%`;
 
         animationRequested = false;
     }
@@ -1801,92 +1848,118 @@
     );
 
     menuButton.addEventListener("click", () => {
-        const isOpen = navLinksContainer.classList.toggle("open");
+        const isOpen =
+            navLinksContainer.classList.toggle("open");
 
-        menuButton.textContent = isOpen ? "✕" : "☰";
-        menuButton.setAttribute("aria-expanded", String(isOpen));
+        menuButton.textContent =
+            isOpen ? "✕" : "☰";
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            String(isOpen)
+        );
     });
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
-        link.addEventListener("click", () => {
-            navLinksContainer.classList.remove("open");
-            menuButton.textContent = "☰";
-            menuButton.setAttribute("aria-expanded", "false");
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(link => {
+            link.addEventListener("click", () => {
+                navLinksContainer.classList.remove("open");
+                menuButton.textContent = "☰";
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            });
         });
-    });
 
     themeButton.addEventListener("click", () => {
         document.body.classList.toggle("light");
 
-        const isLight = document.body.classList.contains("light");
-        themeButton.textContent = isLight ? "☀" : "◐";
+        const isLight =
+            document.body.classList.contains("light");
+
+        themeButton.textContent =
+            isLight ? "☀" : "◐";
     });
 
-    copyEmailButton.addEventListener("click", async () => {
-        const email = copyEmailButton.dataset.email;
+    copyEmailButton.addEventListener(
+        "click",
+        async () => {
+            const email =
+                copyEmailButton.dataset.email;
 
-        try {
-            await navigator.clipboard.writeText(email);
+            try {
+                await navigator.clipboard.writeText(email);
 
-            copyEmailButton.textContent =
-                "Email copied successfully ✓";
-
-            setTimeout(() => {
                 copyEmailButton.textContent =
-                    "Click here to copy my email";
-            }, 2500);
-        } catch (error) {
-            window.location.href = "mailto:" + email;
-        }
-    });
+                    "Email copied successfully ✓";
 
-    const revealObserver = new IntersectionObserver(
-        entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        },
-        {
-            threshold: 0.12
+                setTimeout(() => {
+                    copyEmailButton.textContent =
+                        "Click here to copy my email";
+                }, 2500);
+            } catch (error) {
+                window.location.href =
+                    "mailto:" + email;
+            }
         }
     );
 
-    document.querySelectorAll(".reveal").forEach(element => {
-        revealObserver.observe(element);
-    });
+    const revealObserver =
+        new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.12
+            }
+        );
 
-    const navigationLinks = document.querySelectorAll(
-        '.nav-links a[href^="#"]'
-    );
+    document
+        .querySelectorAll(".reveal")
+        .forEach(element => {
+            revealObserver.observe(element);
+        });
 
-    const navigationSections = document.querySelectorAll(
-        "#about, #skills, #experience, #contact"
-    );
+    const navigationLinks =
+        document.querySelectorAll(
+            '.nav-links a[href^="#"]'
+        );
 
-    const navigationObserver = new IntersectionObserver(
-        entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    navigationLinks.forEach(link => {
-                        link.classList.remove("active");
+    const navigationSections =
+        document.querySelectorAll(
+            "#about, #skills, #experience, #contact"
+        );
 
-                        if (
-                            link.getAttribute("href") ===
-                            "#" + entry.target.id
-                        ) {
-                            link.classList.add("active");
-                        }
-                    });
-                }
-            });
-        },
-        {
-            rootMargin: "-30% 0px -60% 0px"
-        }
-    );
+    const navigationObserver =
+        new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navigationLinks.forEach(link => {
+                            link.classList.remove("active");
+
+                            if (
+                                link.getAttribute("href") ===
+                                "#" + entry.target.id
+                            ) {
+                                link.classList.add("active");
+                            }
+                        });
+                    }
+                });
+            },
+            {
+                rootMargin: "-30% 0px -60% 0px"
+            }
+        );
 
     navigationSections.forEach(section => {
         navigationObserver.observe(section);
