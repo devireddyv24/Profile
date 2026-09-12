@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vamshi Dhar | QA Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Playfair+Display:italic,wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050505;
+            --accent: #d4af37; /* Premium Gold */
+            --accent-glow: rgba(212, 175, 55, 0.15);
+            --card-bg: #111111;
+            --card-border: #222222;
+            --text: #ffffff;
+            --text-dim: #999999;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        section {
+            scroll-margin-top: 100px;
+        }
+
+        * { 
+            box-sizing: border-box; 
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar - Glassmorphism */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 6%;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .logo { font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; text-decoration: none; color: white; }
+        .logo span { color: var(--accent); }
+
+        .nav-links { display: flex; gap: 35px; }
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--text-dim); 
+            font-size: 0.8rem; 
+            text-transform: uppercase; 
+            letter-spacing: 2px;
+            font-weight: 600;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover { color: var(--text); }
+        .nav-links a:hover::after { width: 100%; }
+
+        .btn-talk {
+            background: var(--accent);
+            color: #000;
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px var(--accent-glow);
+        }
+        
+        .btn-talk:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+            background: #e6be3e;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 6%;
+            background: radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.08) 0%, rgba(0,0,0,0) 50%),
+                        linear-gradient(90deg, #050505 40%, rgba(5,5,5,0.6) 100%), 
+                        url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .hero-content { max-width: 850px; margin-top: 80px; animation: fadeUp 1s ease forwards; }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .status {
+            color: var(--accent);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        .status::before { 
+            content: ""; width: 8px; height: 8px; background: var(--accent); 
+            border-radius: 50%; display: inline-block;
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        .hero h1 {
+            font-size: clamp(3.5rem, 8vw, 6rem);
+            line-height: 1;
+            margin: 0;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: -2px;
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 2rem;
+            color: var(--text-dim);
+            margin: 20px 0 25px 0;
+        }
+
+        .hero p {
+            color: var(--text-dim); 
+            max-width: 600px; 
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .stats {
+            display: flex;
+            gap: 60px;
+            margin-top: 50px;
+            border-top: 1px solid var(--card-border);
+            padding-top: 35px;
+        }
+        
+        .stat-item h3 { font-size: 2.8rem; margin: 0; color: var(--text); font-weight: 300; }
+        .stat-item span { color: var(--accent); font-weight: 700; }
+        .stat-item p { font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin: 0; font-weight: 600;}
+
+        /* General Sections */
+        .container { padding: 100px 6%; }
+        .section-header h2 { 
+            font-size: 2.5rem; 
+            text-transform: uppercase; 
+            margin-bottom: 50px; 
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .section-header h2::after {
+            content: "";
+            height: 1px;
+            flex-grow: 1;
+            background: var(--card-border);
+        }
+
+        /* About Section */
+        .about-text {
+            font-size: 1.2rem; 
+            color: var(--text-dim); 
+            max-width: 900px; 
+            line-height: 1.9;
+        }
+        .about-text strong { color: var(--text); }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-box {
+            background: var(--card-bg);
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            cursor: default;
+        }
+        
+        .skill-box:hover { 
+            border-color: var(--accent); 
+            color: var(--accent); 
+            background: rgba(212, 175, 55, 0.05);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px var(--accent-glow);
+        }
+
+        /* Experience Cards */
+        .experience-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .company-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 40px;
+        }
+        
+        .company-card:hover {
+            border-color: #333;
+        }
+
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed var(--card-border);
+        }
+
+        .company-title h3 { font-size: 2rem; margin: 0; color: var(--text); }
+        .company-title p { color: var(--accent); font-weight: 600; margin: 5px 0 0 0; font-size: 1rem; }
+        .company-date { color: var(--text-dim); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+        .project-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .project-item {
+            padding-left: 20px;
+            border-left: 2px solid var(--card-border);
+        }
+        
+        .project-item:hover {
+            border-left-color: var(--accent);
+        }
+
+        .project-item h4 { font-size: 1.3rem; margin: 0 0 8px 0; color: var(--text); }
+        .project-item .tags { 
+            color: var(--text-dim); 
+            font-size: 0.85rem; 
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        #contact { text-align: center; }
+        #contact .section-header h2::after, #contact .section-header h2::before {
+            content: ""; height: 1px; flex-grow: 1; background: var(--card-border);
+        }
+        
+        .contact-info-block {
+            display: flex; 
+            justify-content: center; 
+            gap: 50px; 
+            color: var(--accent); 
+            font-weight: 600; 
+            font-size: 1.2rem;
+            margin-top: 30px;
+        }
+
+        footer { 
+            padding: 40px 6%; 
+            text-align: center; 
+            color: var(--text-dim); 
+            font-size: 0.75rem; 
+            letter-spacing: 2px; 
+            border-top: 1px solid var(--card-border); 
+            background: #000;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 3.5rem; }
+            .stats { flex-direction: column; gap: 30px; }
+            .company-header { flex-direction: column; gap: 10px; }
+            .contact-info-block { flex-direction: column; gap: 20px; }
+            .container { padding: 60px 6%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="https://devireddyv24.github.io/Profile/vamshidhar_QA_portfolio.html#home" class="logo">VD<span>.</span></a>
+        <div class="nav-links">
+            <a href="https://devireddyv24.github.io/Profile/vamshidhar_QA_portfolio.html#about">About</a>
+            <a href="https://devireddyv24.github.io/Profile/vamshidhar_QA_portfolio.html#skills">Skills</a>
+            <a href="https://devireddyv24.github.io/Profile/vamshidhar_QA_portfolio.html#experience">Experience</a>
+            <a href="https://devireddyv24.github.io/Profile/vamshidhar_QA_portfolio.html#contact">Contact</a>
+        </div>
+        <a href="mailto:devireddyv22@gmail.com" class="btn-talk">Let's Talk</a>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <div class="status">Available for opportunities</div>
+            <h1>Vamshi<br>Dhar<span>.</span></h1>
+            <h2>Software Test Engineer · Hyderabad, India</h2>
+            <p>
+                Software Test Engineer with over 3.8 years of experience across manual QA, automation, and performance validation. Skilled at building robust frameworks and safeguarding platform stability for high-traffic e-commerce and fintech applications.
+            </p>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <h3>3.8<span>+</span></h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3>350<span>+</span></h3>
+                    <p>Regression Scenarios Automated</p>
+                </div>
+                <div class="stat-item">
+                    <h3>65<span>%</span></h3>
+                    <p>Faster Validation Cycles</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="container" id="about">
+        <div class="section-header">
+            <h2>Professional Summary</h2>
+        </div>
+        <p class="about-text">
+            Detail-oriented QA professional skilled in <strong>Selenium WebDriver, Playwright, Cypress, Appium, JMeter,</strong> and <strong>API Testing</strong>. Experienced in developing automation frameworks using Page Object Model (POM), validating complex payment gateways, and securing remittance transaction systems. Extensive expertise in <strong>Omni-Channel Retail Testing</strong>, BOPIS workflows, and cross-browser validation to ensure flawless user experiences.
+        </p>
+    </section>
+
+    <section class="container" id="skills">
+        <div class="section-header">
+            <h2>Technical Arsenal</h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-box">SELENIUM WEBDRIVER</div>
+            <div class="skill-box">CYPRESS</div>
+            <div class="skill-box">PLAYWRIGHT</div>
+            <div class="skill-box">APPIUM</div>
+            <div class="skill-box">JMETER</div>
+            <div class="skill-box">REST ASSURED & POSTMAN</div>
+            <div class="skill-box">TESTNG FRAMEWORK</div>
+            <div class="skill-box">CUCUMBER (BDD)</div>
+            <div class="skill-box">MOCHA / CHAI</div>
+            <div class="skill-box">JAVA & JAVASCRIPT</div>
+            <div class="skill-box">SQL DATABASES</div>
+            <div class="skill-box">JIRA & GITHUB & JENKINS</div>
+        </div>
+    </section>
+
+    <section class="container" id="experience">
+        <div class="section-header">
+            <h2>Work Experience</h2>
+        </div>
+        
+        <div class="experience-grid">
+            <!-- Company 1 -->
+            <div class="company-card">
+                <div class="company-header">
+                    <div class="company-title">
+                        <h3>Revalsys Technologies</h3>
+                        <p>Software Test Engineer</p>
+                    </div>
+                    <div class="company-date">Mar 2024 - Jul 2026</div>
+                </div>
+                
+                <div class="project-list">
+                    <div class="project-item">
+                        <h4>Fossil India</h4>
+                        <div class="tags">Omni-channel Order Flow · Forward/Return Flow Validation · BOPIS Workflows · Inventory Synchronization</div>
+                    </div>
+                    <div class="project-item">
+                        <h4>Watch Station India</h4>
+                        <div class="tags">Apache JMeter Load Testing · Peak Sales Simulation · Admin Panel & Coupon Engine Validation</div>
+                    </div>
+                    <div class="project-item">
+                        <h4>Remittance Transaction System</h4>
+                        <div class="tags">Fintech Money Transfers · Multi-currency Transactions · Database Integrity (SQL) · Selenium POM Automation</div>
+                    </div>
+                    <div class="project-item">
+                        <h4>Reval Retail APK</h4>
+                        <div class="tags">Appium Mobile Automation · Hybrid POM Framework · Android Smoke & Functional Checks</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Company 2 -->
+            <div class="company-card">
+                <div class="company-header">
+                    <div class="company-title">
+                        <h3>Enhopes Solution Pvt. Ltd.</h3>
+                        <p>Junior QA Engineer</p>
+                    </div>
+                    <div class="company-date">Oct 2022 - Mar 2024</div>
+                </div>
+                
+                <div class="project-list">
+                    <div class="project-item">
+                        <h4>Decathlon Web Platform</h4>
+                        <div class="tags">Cypress Automation Scripts · UI/UX & Functional Validation · Regression Coverage · Cross-browser Compatibility</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="contact">
+        <div class="section-header">
+            <h2>Get In Touch</h2>
+        </div>
+        <p style="color: var(--text-dim); margin-bottom: 40px; font-size: 1.1rem;">
+            Ready to contribute to high-quality software delivery. Let's discuss your next project.
+        </p>
+        <a href="mailto:devireddyv22@gmail.com" class="btn-talk" style="display: inline-block; margin-bottom: 30px;">Email Me</a>
+        
+        <div class="contact-info-block">
+            <span>📞 +91 8179869832</span>
+            <span>📍 Hyderabad, India</span>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 VAMSHI DHAR. CRAFTED FOR SOFTWARE EXCELLENCE.
+    </footer>
+
+</body>
+</html>
