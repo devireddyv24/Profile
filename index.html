@@ -3,466 +3,1649 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vamshi Dhar | QA Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Playfair+Display:italic,wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Vamshi Dhar Reddy | QA Automation Engineer</title>
+
+    <meta name="description"
+          content="Portfolio of Vamshi Dhar Reddy, Software Test Engineer with 3.8+ years of experience in Selenium Java, TestNG, Cucumber BDD, Appium, API testing, Playwright and performance testing.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+          rel="stylesheet">
+
     <style>
         :root {
-            --bg: #050505;
-            --accent: #d4af37; /* Premium Gold */
-            --accent-glow: rgba(212, 175, 55, 0.15);
-            --card-bg: #111111;
-            --card-border: #222222;
-            --text: #ffffff;
-            --text-dim: #999999;
+            --bg: #07090d;
+            --surface: #0d1118;
+            --surface-2: #131923;
+            --text: #f4f7fb;
+            --muted: #98a2b3;
+            --accent: #69f0cf;
+            --accent-2: #5b8cff;
+            --border: rgba(255, 255, 255, 0.09);
+            --glass: rgba(7, 9, 13, 0.86);
+            --radius: 24px;
+            --shadow: 0 30px 80px rgba(0, 0, 0, 0.38);
+        }
+
+        body.light {
+            --bg: #f4f7fb;
+            --surface: #ffffff;
+            --surface-2: #edf2f7;
+            --text: #101828;
+            --muted: #667085;
+            --border: rgba(16, 24, 40, 0.1);
+            --glass: rgba(255, 255, 255, 0.9);
+            --shadow: 0 25px 70px rgba(16, 24, 40, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         html {
             scroll-behavior: smooth;
         }
 
-        section {
-            scroll-margin-top: 100px;
-        }
-
-        * { 
-            box-sizing: border-box; 
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
-        }
-
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg);
+            min-height: 100vh;
             color: var(--text);
-            margin: 0;
+            background:
+                radial-gradient(circle at 10% 10%, rgba(105, 240, 207, 0.08), transparent 24%),
+                radial-gradient(circle at 90% 20%, rgba(91, 140, 255, 0.09), transparent 25%),
+                var(--bg);
+            font-family: "Inter", sans-serif;
             line-height: 1.7;
             overflow-x: hidden;
+            transition: background 0.3s, color 0.3s;
         }
 
-        /* Navigation Bar - Glassmorphism */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 6%;
+        a {
+            color: inherit;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        section,
+        header {
+            scroll-margin-top: 95px;
+        }
+
+        .container {
+            width: min(1180px, calc(100% - 40px));
+            margin: auto;
+        }
+
+        /* Navigation */
+
+        .navbar {
             position: fixed;
-            top: 0;
-            width: 100%;
+            inset: 0 0 auto;
             z-index: 1000;
-            background: rgba(5, 5, 5, 0.75);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid transparent;
+            transition: 0.3s ease;
         }
 
-        .logo { font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; text-decoration: none; color: white; }
-        .logo span { color: var(--accent); }
+        .navbar.scrolled {
+            background: var(--glass);
+            border-bottom-color: var(--border);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
 
-        .nav-links { display: flex; gap: 35px; }
-        .nav-links a { 
-            text-decoration: none; 
-            color: var(--text-dim); 
-            font-size: 0.8rem; 
-            text-transform: uppercase; 
-            letter-spacing: 2px;
-            font-weight: 600;
+        .nav-inner {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 22px;
+        }
+
+        .logo {
+            flex-shrink: 0;
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.7px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(24px, 3vw, 48px);
+        }
+
+        .nav-links a {
             position: relative;
+            padding: 29px 0;
+            color: var(--muted);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            line-height: 1;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: color 0.25s;
         }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
+
+        .nav-links a:not(.phone-link)::after {
+            content: "";
             width: 0;
             height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: var(--accent);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover { color: var(--text); }
-        .nav-links a:hover::after { width: 100%; }
-
-        .btn-talk {
+            position: absolute;
+            left: 50%;
+            bottom: 18px;
             background: var(--accent);
-            color: #000;
-            padding: 12px 28px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 15px var(--accent-glow);
-        }
-        
-        .btn-talk:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
-            background: #e6be3e;
+            border-radius: 5px;
+            transform: translateX(-50%);
+            transition: width 0.3s;
         }
 
-        /* Hero Section */
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--text);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .desktop-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 10px 14px;
+            color: var(--accent);
+            background: rgba(105, 240, 207, 0.07);
+            border: 1px solid rgba(105, 240, 207, 0.22);
+            border-radius: 12px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: 0.25s;
+        }
+
+        .desktop-phone:hover {
+            color: #06110e;
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .phone-link {
+            display: none;
+        }
+
+        .icon-button,
+        .menu-button {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            color: var(--text);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .icon-button:hover,
+        .menu-button:hover {
+            color: var(--accent);
+            border-color: rgba(105, 240, 207, 0.45);
+        }
+
+        .menu-button {
+            display: none;
+        }
+
+        /* Hero */
+
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 0 6%;
-            background: radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.08) 0%, rgba(0,0,0,0) 50%),
-                        linear-gradient(90deg, #050505 40%, rgba(5,5,5,0.6) 100%), 
-                        url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            padding: 120px 0 65px;
         }
 
-        .hero-content { max-width: 850px; margin-top: 80px; animation: fadeUp 1s ease forwards; }
+        .hero-bento {
+            display: grid;
+            grid-template-columns: 1.35fr 0.65fr;
+            grid-template-rows: auto auto;
+            gap: 18px;
+        }
 
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+        .hero-main {
+            min-height: 600px;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+            grid-row: span 2;
+            padding: clamp(30px, 5vw, 65px);
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(7, 9, 13, 0.99) 0%,
+                    rgba(7, 9, 13, 0.9) 43%,
+                    rgba(7, 9, 13, 0.18) 100%
+                ),
+                linear-gradient(
+                    0deg,
+                    rgba(7, 9, 13, 0.96) 0%,
+                    transparent 65%
+                ),
+                url("vamshi-profile.jpeg") center 18% / cover no-repeat;
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-main::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(120deg, rgba(105, 240, 207, 0.05), transparent 42%),
+                radial-gradient(circle at 82% 20%, rgba(91, 140, 255, 0.16), transparent 28%);
+        }
+
+        .hero-content {
+            max-width: 720px;
+            position: relative;
+            z-index: 2;
         }
 
         .status {
-            color: var(--accent);
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
+            width: fit-content;
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 25px;
-            font-weight: 600;
+            gap: 10px;
+            margin-bottom: 22px;
+            padding: 8px 14px;
+            color: var(--accent);
+            background: rgba(7, 9, 13, 0.68);
+            border: 1px solid rgba(105, 240, 207, 0.24);
+            border-radius: 999px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            backdrop-filter: blur(12px);
         }
-        .status::before { 
-            content: ""; width: 8px; height: 8px; background: var(--accent); 
-            border-radius: 50%; display: inline-block;
-            box-shadow: 0 0 10px var(--accent);
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 0 6px rgba(105, 240, 207, 0.12);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            50% {
+                box-shadow: 0 0 0 11px rgba(105, 240, 207, 0);
+            }
         }
 
         .hero h1 {
-            font-size: clamp(3.5rem, 8vw, 6rem);
-            line-height: 1;
-            margin: 0;
-            text-transform: uppercase;
+            max-width: 680px;
+            color: #ffffff;
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: clamp(3rem, 6.5vw, 6.4rem);
             font-weight: 800;
-            letter-spacing: -2px;
+            line-height: 0.95;
+            letter-spacing: -5px;
         }
 
-        .hero h2 {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-weight: 400;
-            font-size: 2rem;
-            color: var(--text-dim);
-            margin: 20px 0 25px 0;
+        .gradient-text {
+            color: transparent;
+            background: linear-gradient(100deg, var(--accent), #a7c5ff);
+            background-clip: text;
+            -webkit-background-clip: text;
         }
 
-        .hero p {
-            color: var(--text-dim); 
-            max-width: 600px; 
-            margin-bottom: 40px;
-            font-size: 1.1rem;
+        .hero-role {
+            margin: 23px 0 12px;
+            color: #eef3f8;
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: clamp(1.05rem, 2vw, 1.45rem);
+            font-weight: 700;
         }
 
-        .stats {
+        .hero-description {
+            max-width: 620px;
+            color: #bdc6d3;
+            font-size: 0.98rem;
+        }
+
+        .hero-actions {
             display: flex;
-            gap: 60px;
-            margin-top: 50px;
-            border-top: 1px solid var(--card-border);
-            padding-top: 35px;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
         }
-        
-        .stat-item h3 { font-size: 2.8rem; margin: 0; color: var(--text); font-weight: 300; }
-        .stat-item span { color: var(--accent); font-weight: 700; }
-        .stat-item p { font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin: 0; font-weight: 600;}
 
-        /* General Sections */
-        .container { padding: 100px 6%; }
-        .section-header h2 { 
-            font-size: 2.5rem; 
-            text-transform: uppercase; 
-            margin-bottom: 50px; 
-            letter-spacing: -1px;
-            display: flex;
+        .button {
+            display: inline-flex;
             align-items: center;
-            gap: 20px;
-        }
-        .section-header h2::after {
-            content: "";
-            height: 1px;
-            flex-grow: 1;
-            background: var(--card-border);
-        }
-
-        /* About Section */
-        .about-text {
-            font-size: 1.2rem; 
-            color: var(--text-dim); 
-            max-width: 900px; 
-            line-height: 1.9;
-        }
-        .about-text strong { color: var(--text); }
-
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-        
-        .skill-box {
-            background: var(--card-bg);
-            padding: 30px 20px;
-            text-align: center;
-            border: 1px solid var(--card-border);
-            border-radius: 8px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            font-size: 0.85rem;
-            color: var(--text-dim);
-            cursor: default;
-        }
-        
-        .skill-box:hover { 
-            border-color: var(--accent); 
-            color: var(--accent); 
-            background: rgba(212, 175, 55, 0.05);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px var(--accent-glow);
-        }
-
-        /* Experience Cards */
-        .experience-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        .company-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
+            justify-content: center;
+            gap: 9px;
+            padding: 13px 20px;
+            border: 1px solid transparent;
             border-radius: 12px;
-            padding: 40px;
-        }
-        
-        .company-card:hover {
-            border-color: #333;
+            font-size: 0.88rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.25s;
         }
 
-        .company-header {
+        .button-primary {
+            color: #04110d;
+            background: var(--accent);
+        }
+
+        .button-primary:hover {
+            background: #a0ffe9;
+            transform: translateY(-3px);
+        }
+
+        .button-glass {
+            color: #ffffff;
+            background: rgba(7, 9, 13, 0.68);
+            border-color: rgba(255, 255, 255, 0.16);
+            backdrop-filter: blur(12px);
+        }
+
+        .button-glass:hover {
+            color: var(--accent);
+            border-color: rgba(105, 240, 207, 0.45);
+            transform: translateY(-3px);
+        }
+
+        /* Hero cards */
+
+        .mini-card {
+            min-height: 290px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(145deg, var(--surface-2), var(--surface));
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            transition: 0.3s;
+        }
+
+        .mini-card:hover {
+            border-color: rgba(105, 240, 207, 0.35);
+            transform: translateY(-5px);
+        }
+
+        .mini-card::after {
+            content: "";
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            right: -70px;
+            bottom: -70px;
+            background: rgba(105, 240, 207, 0.09);
+            border-radius: 50%;
+        }
+
+        .card-label {
+            color: var(--muted);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+        }
+
+        .experience-number {
+            display: block;
+            margin: 22px 0 3px;
+            color: var(--accent);
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .mini-card h2 {
+            margin-top: 20px;
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 1.4rem;
+            line-height: 1.3;
+        }
+
+        .mini-card p {
+            margin-top: 10px;
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        .stack-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 24px;
+        }
+
+        .tag {
+            padding: 7px 10px;
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 600;
+        }
+
+        /* Sections */
+
+        .section {
+            padding: 105px 0;
+        }
+
+        .section-top {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px dashed var(--card-border);
+            align-items: flex-end;
+            gap: 30px;
+            margin-bottom: 45px;
         }
 
-        .company-title h3 { font-size: 2rem; margin: 0; color: var(--text); }
-        .company-title p { color: var(--accent); font-weight: 600; margin: 5px 0 0 0; font-size: 1rem; }
-        .company-date { color: var(--text-dim); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .eyebrow {
+            margin-bottom: 10px;
+            color: var(--accent);
+            font-size: 0.73rem;
+            font-weight: 800;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+        }
 
-        .project-list {
+        .section-title {
+            max-width: 760px;
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: clamp(2rem, 4.4vw, 3.8rem);
+            line-height: 1.1;
+            letter-spacing: -2.5px;
+        }
+
+        .section-description {
+            max-width: 410px;
+            color: var(--muted);
+            font-size: 0.93rem;
+        }
+
+        .bento-card {
+            padding: 34px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            transition: 0.3s;
+        }
+
+        .bento-card:hover {
+            border-color: rgba(105, 240, 207, 0.3);
+        }
+
+        /* About */
+
+        .about-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 18px;
         }
 
-        .project-item {
-            padding-left: 20px;
-            border-left: 2px solid var(--card-border);
-        }
-        
-        .project-item:hover {
-            border-left-color: var(--accent);
+        .about-copy {
+            color: var(--muted);
+            font-size: 1rem;
         }
 
-        .project-item h4 { font-size: 1.3rem; margin: 0 0 8px 0; color: var(--text); }
-        .project-item .tags { 
-            color: var(--text-dim); 
-            font-size: 0.85rem; 
-            line-height: 1.6;
+        .about-copy strong {
+            color: var(--text);
         }
 
-        /* Contact Section */
-        #contact { text-align: center; }
-        #contact .section-header h2::after, #contact .section-header h2::before {
-            content: ""; height: 1px; flex-grow: 1; background: var(--card-border);
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
         }
-        
-        .contact-info-block {
-            display: flex; 
-            justify-content: center; 
-            gap: 50px; 
-            color: var(--accent); 
-            font-weight: 600; 
-            font-size: 1.2rem;
+
+        .fact {
+            padding: 21px;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 17px;
+        }
+
+        .fact strong {
+            display: block;
+            margin-bottom: 4px;
+            color: var(--accent);
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 1.45rem;
+        }
+
+        .fact span {
+            color: var(--muted);
+            font-size: 0.78rem;
+        }
+
+        /* Skills */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .skill-card {
+            padding: 25px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            border-color: rgba(105, 240, 207, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .skill-number {
+            color: var(--accent);
+            font-size: 0.72rem;
+            font-weight: 800;
+        }
+
+        .skill-card h3 {
+            margin: 13px 0 8px;
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 1.05rem;
+        }
+
+        .skill-card p {
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        /* Projects */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .project-card {
+            min-height: 370px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 34px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(145deg, var(--surface-2), var(--surface));
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            transition: 0.35s;
+        }
+
+        .project-card:hover {
+            border-color: rgba(105, 240, 207, 0.4);
+            transform: translateY(-7px);
+            box-shadow: var(--shadow);
+        }
+
+        .project-card::before {
+            content: "";
+            width: 220px;
+            height: 220px;
+            position: absolute;
+            top: -120px;
+            right: -100px;
+            background: var(--project-glow, rgba(105, 240, 207, 0.13));
+            border-radius: 50%;
+        }
+
+        .project-number {
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 800;
+        }
+
+        .project-icon {
+            width: 56px;
+            height: 56px;
+            display: grid;
+            place-items: center;
+            margin: 45px 0 25px;
+            color: #07100f;
+            background: linear-gradient(135deg, var(--accent), #9ebcff);
+            border-radius: 17px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            transform: rotate(-4deg);
+        }
+
+        .project-card h3 {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 1.55rem;
+        }
+
+        .project-card p {
+            margin: 10px 0 20px;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        /* Experience */
+
+        .experience-list {
+            display: grid;
+            gap: 18px;
+        }
+
+        .experience-card {
+            display: grid;
+            grid-template-columns: 0.35fr 1fr;
+            gap: 35px;
+            padding: 35px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            transition: 0.3s;
+        }
+
+        .experience-card:hover {
+            border-color: rgba(105, 240, 207, 0.35);
+        }
+
+        .experience-period {
+            color: var(--accent);
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+
+        .experience-content h3 {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 1.3rem;
+        }
+
+        .experience-role {
+            margin: 4px 0 15px;
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .experience-content p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .experience-content ul {
+            margin: 17px 0 0 18px;
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        .experience-content li {
+            margin-bottom: 7px;
+        }
+
+        /* Contact */
+
+        .contact-card {
+            padding: clamp(35px, 7vw, 80px);
+            text-align: center;
+            background:
+                radial-gradient(circle at top, rgba(105, 240, 207, 0.15), transparent 45%),
+                var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 32px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-card h2 {
+            max-width: 750px;
+            margin: auto;
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: clamp(2.1rem, 5vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -3px;
+        }
+
+        .contact-card > p {
+            max-width: 600px;
+            margin: 20px auto 0;
+            color: var(--muted);
+        }
+
+        .contact-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
             margin-top: 30px;
         }
 
-        footer { 
-            padding: 40px 6%; 
-            text-align: center; 
-            color: var(--text-dim); 
-            font-size: 0.75rem; 
-            letter-spacing: 2px; 
-            border-top: 1px solid var(--card-border); 
-            background: #000;
+        .contact-card .button-glass {
+            color: var(--text);
+            background: var(--surface-2);
+            border-color: var(--border);
         }
 
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 3.5rem; }
-            .stats { flex-direction: column; gap: 30px; }
-            .company-header { flex-direction: column; gap: 10px; }
-            .contact-info-block { flex-direction: column; gap: 20px; }
-            .container { padding: 60px 6%; }
+        .direct-contact {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 28px;
+        }
+
+        .direct-contact a,
+        .direct-contact span {
+            padding: 10px 15px;
+            color: var(--muted);
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 0.85rem;
+            text-decoration: none;
+        }
+
+        .direct-contact a:hover {
+            color: var(--accent);
+            border-color: rgba(105, 240, 207, 0.4);
+        }
+
+        .email-copy {
+            margin-top: 22px;
+            padding: 9px;
+            color: var(--muted);
+            background: none;
+            border: 0;
+            cursor: pointer;
+        }
+
+        .email-copy:hover {
+            color: var(--accent);
+        }
+
+        footer {
+            padding: 34px 20px;
+            color: var(--muted);
+            text-align: center;
+            font-size: 0.78rem;
+        }
+
+        /* Scroll reveal */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.75s ease, transform 0.75s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Tablet */
+
+        @media (max-width: 1040px) {
+            .desktop-phone {
+                display: none;
+            }
+
+            .hero-bento {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero-main {
+                grid-column: 1 / -1;
+                grid-row: auto;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 850px) {
+            .menu-button {
+                display: grid;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 78px;
+                left: 20px;
+                right: 20px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 5px;
+                padding: 18px;
+                background: var(--glass);
+                border: 1px solid var(--border);
+                border-radius: 16px;
+                backdrop-filter: blur(20px);
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 13px;
+                text-align: center;
+            }
+
+            .nav-links a::after {
+                display: none;
+            }
+
+            .phone-link {
+                display: block;
+                margin-top: 6px;
+                color: var(--accent) !important;
+                background: rgba(105, 240, 207, 0.08);
+                border: 1px solid rgba(105, 240, 207, 0.25);
+                border-radius: 10px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-top {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        /* Mobile */
+
+        @media (max-width: 620px) {
+            .container {
+                width: min(100% - 26px, 1180px);
+            }
+
+            .hero {
+                padding-top: 100px;
+            }
+
+            .hero-bento {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-main {
+                min-height: 690px;
+                padding: 26px;
+                background:
+                    linear-gradient(
+                        0deg,
+                        rgba(7, 9, 13, 0.99) 5%,
+                        rgba(7, 9, 13, 0.84) 47%,
+                        rgba(7, 9, 13, 0.05) 100%
+                    ),
+                    url("vamshi-profile.jpeg") 58% top / cover no-repeat;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+                letter-spacing: -3px;
+            }
+
+            .hero-actions .button,
+            .contact-actions .button {
+                width: 100%;
+            }
+
+            .mini-card {
+                min-height: auto;
+            }
+
+            .facts-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 75px 0;
+            }
+
+            .section-title {
+                letter-spacing: -1.8px;
+            }
+
+            .bento-card,
+            .project-card,
+            .experience-card {
+                padding: 25px;
+            }
+
+            .experience-card {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .direct-contact {
+                flex-direction: column;
+            }
+
+            .direct-contact a,
+            .direct-contact span {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <nav>
-        <a href="https://devireddyv24.github.io/Profile/vamshidhar_QA_portfolio.html#home" class="logo">VD<span>.</span></a>
-        <div class="nav-links">
-            <a href="https://devireddyv24.github.io/Profile/vamshidhar_QA_portfolio.html#about">About</a>
-            <a href="https://devireddyv24.github.io/Profile/vamshidhar_QA_portfolio.html#skills">Skills</a>
-            <a href="https://devireddyv24.github.io/Profile/vamshidhar_QA_portfolio.html#experience">Experience</a>
-            <a href="https://devireddyv24.github.io/Profile/vamshidhar_QA_portfolio.html#contact">Contact</a>
-        </div>
-        <a href="mailto:devireddyv22@gmail.com" class="btn-talk">Let's Talk</a>
-    </nav>
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+    <div class="container nav-inner">
 
-    <header class="hero" id="home">
-        <div class="hero-content">
-            <div class="status">Available for opportunities</div>
-            <h1>Vamshi<br>Dhar<span>.</span></h1>
-            <h2>Software Test Engineer · Hyderabad, India</h2>
+        <a href="#home" class="logo">
+            VAMSHI<span>.</span>
+        </a>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+
+            <a href="tel:+918179869832" class="phone-link">
+                ☎ +91 81798 69832
+            </a>
+        </div>
+
+        <div class="nav-actions">
+            <a href="tel:+918179869832"
+               class="desktop-phone"
+               title="Call Vamshi">
+                ☎ +91 81798 69832
+            </a>
+
+            <button class="icon-button"
+                    id="themeButton"
+                    aria-label="Change theme"
+                    title="Change theme">
+                ◐
+            </button>
+
+            <button class="menu-button"
+                    id="menuButton"
+                    aria-label="Open navigation"
+                    aria-expanded="false">
+                ☰
+            </button>
+        </div>
+
+    </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero" id="home">
+    <div class="container hero-bento">
+
+        <article class="hero-main">
+            <div class="hero-content">
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Immediate Joiner · Open to Opportunities
+                </div>
+
+                <h1>
+                    Quality in every
+                    <span class="gradient-text">release.</span>
+                </h1>
+
+                <p class="hero-role">
+                    Software Test Engineer · QA Automation Engineer
+                </p>
+
+                <p class="hero-description">
+                    I build reliable testing solutions for web, mobile and API
+                    applications using Selenium Java, TestNG, Cucumber BDD,
+                    Appium, REST Assured and modern automation tools.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#projects" class="button button-primary">
+                        View Projects →
+                    </a>
+
+                    <a href="Vamshi_Dhar_QA_Resume.pdf"
+                       download
+                       class="button button-glass">
+                        Download Resume ↓
+                    </a>
+                </div>
+
+            </div>
+        </article>
+
+        <article class="mini-card">
+            <span class="card-label">Experience</span>
+
+            <strong class="experience-number">3.8+</strong>
+
+            <h2>Years delivering reliable software.</h2>
+
             <p>
-                Software Test Engineer with over 3.8 years of experience across manual QA, automation, and performance validation. Skilled at building robust frameworks and safeguarding platform stability for high-traffic e-commerce and fintech applications.
+                Web, mobile, API, database and performance testing experience.
             </p>
-            
-            <div class="stats">
-                <div class="stat-item">
-                    <h3>3.8<span>+</span></h3>
-                    <p>Years Experience</p>
-                </div>
-                <div class="stat-item">
-                    <h3>350<span>+</span></h3>
-                    <p>Regression Scenarios Automated</p>
-                </div>
-                <div class="stat-item">
-                    <h3>65<span>%</span></h3>
-                    <p>Faster Validation Cycles</p>
-                </div>
+        </article>
+
+        <article class="mini-card">
+            <span class="card-label">Core Stack</span>
+
+            <h2>Automation designed for maintainability.</h2>
+
+            <div class="stack-list">
+                <span class="tag">Selenium</span>
+                <span class="tag">Java</span>
+                <span class="tag">TestNG</span>
+                <span class="tag">Cucumber BDD</span>
+                <span class="tag">BDD Framework</span>
+                <span class="tag">Appium</span>
+                <span class="tag">REST Assured</span>
+                <span class="tag">Playwright</span>
+                <span class="tag">Jenkins</span>
+                <span class="tag">SQL</span>
             </div>
-        </div>
-    </header>
+        </article>
 
-    <section class="container" id="about">
-        <div class="section-header">
-            <h2>Professional Summary</h2>
-        </div>
-        <p class="about-text">
-            Detail-oriented QA professional skilled in <strong>Selenium WebDriver, Playwright, Cypress, Appium, JMeter,</strong> and <strong>API Testing</strong>. Experienced in developing automation frameworks using Page Object Model (POM), validating complex payment gateways, and securing remittance transaction systems. Extensive expertise in <strong>Omni-Channel Retail Testing</strong>, BOPIS workflows, and cross-browser validation to ensure flawless user experiences.
-        </p>
-    </section>
+    </div>
+</header>
 
-    <section class="container" id="skills">
-        <div class="section-header">
-            <h2>Technical Arsenal</h2>
-        </div>
-        <div class="skills-grid">
-            <div class="skill-box">SELENIUM WEBDRIVER</div>
-            <div class="skill-box">CYPRESS</div>
-            <div class="skill-box">PLAYWRIGHT</div>
-            <div class="skill-box">APPIUM</div>
-            <div class="skill-box">JMETER</div>
-            <div class="skill-box">REST ASSURED & POSTMAN</div>
-            <div class="skill-box">TESTNG FRAMEWORK</div>
-            <div class="skill-box">CUCUMBER (BDD)</div>
-            <div class="skill-box">MOCHA / CHAI</div>
-            <div class="skill-box">JAVA & JAVASCRIPT</div>
-            <div class="skill-box">SQL DATABASES</div>
-            <div class="skill-box">JIRA & GITHUB & JENKINS</div>
-        </div>
-    </section>
+<main>
 
-    <section class="container" id="experience">
-        <div class="section-header">
-            <h2>Work Experience</h2>
-        </div>
-        
-        <div class="experience-grid">
-            <!-- Company 1 -->
-            <div class="company-card">
-                <div class="company-header">
-                    <div class="company-title">
-                        <h3>Revalsys Technologies</h3>
-                        <p>Software Test Engineer</p>
-                    </div>
-                    <div class="company-date">Mar 2024 - Jul 2026</div>
+    <!-- About -->
+    <section class="section" id="about">
+        <div class="container">
+
+            <div class="section-top">
+                <div>
+                    <p class="eyebrow">About Me</p>
+
+                    <h2 class="section-title">
+                        Testing products with a user-first and risk-focused mindset.
+                    </h2>
                 </div>
-                
-                <div class="project-list">
-                    <div class="project-item">
-                        <h4>Fossil India</h4>
-                        <div class="tags">Omni-channel Order Flow · Forward/Return Flow Validation · BOPIS Workflows · Inventory Synchronization</div>
-                    </div>
-                    <div class="project-item">
-                        <h4>Watch Station India</h4>
-                        <div class="tags">Apache JMeter Load Testing · Peak Sales Simulation · Admin Panel & Coupon Engine Validation</div>
-                    </div>
-                    <div class="project-item">
-                        <h4>Remittance Transaction System</h4>
-                        <div class="tags">Fintech Money Transfers · Multi-currency Transactions · Database Integrity (SQL) · Selenium POM Automation</div>
-                    </div>
-                    <div class="project-item">
-                        <h4>Reval Retail APK</h4>
-                        <div class="tags">Appium Mobile Automation · Hybrid POM Framework · Android Smoke & Functional Checks</div>
-                    </div>
-                </div>
+
+                <p class="section-description">
+                    Based in Hyderabad and available to join immediately for
+                    Software Test Engineer, QA Automation Engineer and SDET roles.
+                </p>
             </div>
 
-            <!-- Company 2 -->
-            <div class="company-card">
-                <div class="company-header">
-                    <div class="company-title">
-                        <h3>Enhopes Solution Pvt. Ltd.</h3>
-                        <p>Junior QA Engineer</p>
+            <div class="about-grid reveal">
+
+                <article class="bento-card about-copy">
+                    <p>
+                        I am <strong>Vamshi Dhar Reddy</strong>, a Software Test
+                        Engineer with more than <strong>3.8 years of experience</strong>
+                        in manual testing, automation, API testing, mobile testing
+                        and performance validation.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        I have worked on high-traffic e-commerce applications,
+                        omni-channel retail workflows, Android and iOS applications,
+                        order-management platforms and transaction-based systems.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        My primary automation stack includes
+                        <strong>Selenium WebDriver, Java, TestNG, Maven, Cucumber
+                        BDD and Page Object Model</strong>. I also have experience
+                        with Postman, REST Assured, Appium, JMeter, Jenkins,
+                        Git and basic SQL.
+                    </p>
+                </article>
+
+                <article class="bento-card">
+                    <div class="facts-grid">
+
+                        <div class="fact">
+                            <strong>3.8+</strong>
+                            <span>Years of QA experience</span>
+                        </div>
+
+                        <div class="fact">
+                            <strong>Web</strong>
+                            <span>Manual and automation testing</span>
+                        </div>
+
+                        <div class="fact">
+                            <strong>Mobile</strong>
+                            <span>Android and iOS validation</span>
+                        </div>
+
+                        <div class="fact">
+                            <strong>API</strong>
+                            <span>Postman and REST Assured</span>
+                        </div>
+
                     </div>
-                    <div class="company-date">Oct 2022 - Mar 2024</div>
-                </div>
-                
-                <div class="project-list">
-                    <div class="project-item">
-                        <h4>Decathlon Web Platform</h4>
-                        <div class="tags">Cypress Automation Scripts · UI/UX & Functional Validation · Regression Coverage · Cross-browser Compatibility</div>
-                    </div>
-                </div>
+                </article>
+
             </div>
         </div>
     </section>
 
-    <section class="container" id="contact">
-        <div class="section-header">
-            <h2>Get In Touch</h2>
-        </div>
-        <p style="color: var(--text-dim); margin-bottom: 40px; font-size: 1.1rem;">
-            Ready to contribute to high-quality software delivery. Let's discuss your next project.
-        </p>
-        <a href="mailto:devireddyv22@gmail.com" class="btn-talk" style="display: inline-block; margin-bottom: 30px;">Email Me</a>
-        
-        <div class="contact-info-block">
-            <span>📞 +91 8179869832</span>
-            <span>📍 Hyderabad, India</span>
+    <!-- Skills -->
+    <section class="section" id="skills">
+        <div class="container">
+
+            <div class="section-top">
+                <div>
+                    <p class="eyebrow">Technical Skills</p>
+
+                    <h2 class="section-title">
+                        A practical QA toolkit covering the complete testing lifecycle.
+                    </h2>
+                </div>
+
+                <p class="section-description">
+                    Automation, manual testing, API validation, mobile testing,
+                    performance testing and continuous integration.
+                </p>
+            </div>
+
+            <div class="skills-grid">
+
+                <article class="skill-card reveal">
+                    <span class="skill-number">01</span>
+                    <h3>Web Automation</h3>
+                    <p>Selenium WebDriver, Java, TestNG, Maven and Page Object Model.</p>
+                </article>
+
+                <article class="skill-card reveal">
+                    <span class="skill-number">02</span>
+                    <h3>BDD Framework</h3>
+                    <p>Cucumber BDD, feature files, scenarios, step definitions and runners.</p>
+                </article>
+
+                <article class="skill-card reveal">
+                    <span class="skill-number">03</span>
+                    <h3>API Testing</h3>
+                    <p>Postman, REST Assured, HTTP methods and response validation.</p>
+                </article>
+
+                <article class="skill-card reveal">
+                    <span class="skill-number">04</span>
+                    <h3>Mobile Testing</h3>
+                    <p>Appium, Android Studio, ADB, UiAutomator2 and mobile validation.</p>
+                </article>
+
+                <article class="skill-card reveal">
+                    <span class="skill-number">05</span>
+                    <h3>Modern Automation</h3>
+                    <p>Working knowledge of Playwright and Cypress with JavaScript.</p>
+                </article>
+
+                <article class="skill-card reveal">
+                    <span class="skill-number">06</span>
+                    <h3>Performance Testing</h3>
+                    <p>Apache JMeter for load, stress and peak-traffic validation.</p>
+                </article>
+
+                <article class="skill-card reveal">
+                    <span class="skill-number">07</span>
+                    <h3>CI/CD Tools</h3>
+                    <p>Jenkins, Git, GitHub and Maven build execution.</p>
+                </article>
+
+                <article class="skill-card reveal">
+                    <span class="skill-number">08</span>
+                    <h3>Database Testing</h3>
+                    <p>Basic SQL queries for backend data and transaction validation.</p>
+                </article>
+
+                <article class="skill-card reveal">
+                    <span class="skill-number">09</span>
+                    <h3>QA Processes</h3>
+                    <p>Functional, regression, smoke, integration and Agile testing.</p>
+                </article>
+
+            </div>
         </div>
     </section>
 
-    <footer>
-        &copy; 2026 VAMSHI DHAR. CRAFTED FOR SOFTWARE EXCELLENCE.
-    </footer>
+    <!-- Projects -->
+    <section class="section" id="projects">
+        <div class="container">
+
+            <div class="section-top">
+                <div>
+                    <p class="eyebrow">Featured Projects</p>
+
+                    <h2 class="section-title">
+                        Projects where quality supported the customer experience.
+                    </h2>
+                </div>
+            </div>
+
+            <div class="projects-grid">
+
+                <article class="project-card reveal">
+                    <div>
+                        <span class="project-number">PROJECT 01</span>
+
+                        <div class="project-icon">FI</div>
+
+                        <h3>Fossil India</h3>
+
+                        <p>
+                            Tested product catalogues, payments, order creation,
+                            returns, BOPIS workflows and inventory synchronization
+                            across an omni-channel e-commerce platform.
+                        </p>
+                    </div>
+
+                    <div class="project-tags">
+                        <span class="tag">E-commerce</span>
+                        <span class="tag">Selenium Java</span>
+                        <span class="tag">API Testing</span>
+                        <span class="tag">Regression</span>
+                    </div>
+                </article>
+
+                <article class="project-card reveal"
+                         style="--project-glow: rgba(91, 140, 255, 0.16);">
+                    <div>
+                        <span class="project-number">PROJECT 02</span>
+
+                        <div class="project-icon">WS</div>
+
+                        <h3>Watch Station India</h3>
+
+                        <p>
+                            Validated storefront and admin modules, order management,
+                            coupon rules and platform stability during high-traffic
+                            promotional sales.
+                        </p>
+                    </div>
+
+                    <div class="project-tags">
+                        <span class="tag">JMeter</span>
+                        <span class="tag">Admin Testing</span>
+                        <span class="tag">Performance</span>
+                        <span class="tag">Order Flow</span>
+                    </div>
+                </article>
+
+                <article class="project-card reveal"
+                         style="--project-glow: rgba(168, 85, 247, 0.15);">
+                    <div>
+                        <span class="project-number">PROJECT 03</span>
+
+                        <div class="project-icon">DA</div>
+
+                        <h3>Decathlon – All For Sports</h3>
+
+                        <p>
+                            Performed functional, regression, API, cross-browser
+                            and mobile testing for web, Android and iOS customer
+                            journeys.
+                        </p>
+                    </div>
+
+                    <div class="project-tags">
+                        <span class="tag">Web Testing</span>
+                        <span class="tag">Mobile Testing</span>
+                        <span class="tag">Postman</span>
+                        <span class="tag">JIRA</span>
+                    </div>
+                </article>
+
+                <article class="project-card reveal"
+                         style="--project-glow: rgba(249, 115, 22, 0.14);">
+                    <div>
+                        <span class="project-number">PROJECT 04</span>
+
+                        <div class="project-icon">RA</div>
+
+                        <h3>Reval Retail Mobile App</h3>
+
+                        <p>
+                            Developed reusable Appium automation using Java,
+                            TestNG and a hybrid Page Object Model for Android
+                            smoke and functional testing.
+                        </p>
+                    </div>
+
+                    <div class="project-tags">
+                        <span class="tag">Appium</span>
+                        <span class="tag">Java</span>
+                        <span class="tag">TestNG</span>
+                        <span class="tag">Android</span>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section" id="experience">
+        <div class="container">
+
+            <div class="section-top">
+                <div>
+                    <p class="eyebrow">Work Experience</p>
+
+                    <h2 class="section-title">
+                        Professional experience in software quality assurance.
+                    </h2>
+                </div>
+            </div>
+
+            <div class="experience-list">
+
+                <article class="experience-card reveal">
+                    <div class="experience-period">
+                        March 2024 – July 2026
+                    </div>
+
+                    <div class="experience-content">
+                        <h3>Revalsys Technologies Pvt. Ltd.</h3>
+
+                        <p class="experience-role">
+                            Software Test Engineer
+                        </p>
+
+                        <p>
+                            Worked on e-commerce, retail, mobile and transaction-based
+                            applications using manual and automated testing approaches.
+                        </p>
+
+                        <ul>
+                            <li>Performed functional, smoke, regression and integration testing.</li>
+                            <li>Automated web scenarios using Selenium Java, TestNG and POM.</li>
+                            <li>Created mobile automation using Appium and Java.</li>
+                            <li>Validated APIs, database records and order-management workflows.</li>
+                            <li>Performed performance testing during peak sales using JMeter.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="experience-card reveal">
+                    <div class="experience-period">
+                        October 2022 – March 2024
+                    </div>
+
+                    <div class="experience-content">
+                        <h3>Enhops Solutions Pvt. Ltd.</h3>
+
+                        <p class="experience-role">
+                            Junior QA Engineer
+                        </p>
+
+                        <p>
+                            Worked on the Decathlon – All For Sports project across
+                            web, Android and iOS applications.
+                        </p>
+
+                        <ul>
+                            <li>Created and executed functional and regression test cases.</li>
+                            <li>Performed API testing using Postman.</li>
+                            <li>Conducted cross-browser and mobile application testing.</li>
+                            <li>Logged, tracked and retested defects using JIRA.</li>
+                            <li>Collaborated with developers and business teams in Agile sprints.</li>
+                        </ul>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+        <div class="container">
+
+            <div class="contact-card reveal">
+                <p class="eyebrow">Let’s Connect</p>
+
+                <h2>
+                    Let’s build software users can
+                    <span class="gradient-text">trust.</span>
+                </h2>
+
+                <p>
+                    I am available for QA Automation Engineer, Software Test
+                    Engineer, SDET and Test Engineer opportunities.
+                </p>
+
+                <div class="contact-actions">
+                    <a href="mailto:devireddyv22@gmail.com"
+                       class="button button-primary">
+                        Email Me →
+                    </a>
+
+                    <a href="tel:+918179869832"
+                       class="button button-glass">
+                        Call Me
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/vamshidhar-reddy-197817174"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="button button-glass">
+                        LinkedIn
+                    </a>
+
+                    <a href="https://github.com/devireddyv24"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="button button-glass">
+                        GitHub
+                    </a>
+                </div>
+
+                <div class="direct-contact">
+                    <a href="tel:+918179869832">
+                        ☎ +91 81798 69832
+                    </a>
+
+                    <a href="mailto:devireddyv22@gmail.com">
+                        ✉ devireddyv22@gmail.com
+                    </a>
+
+                    <span>⌖ Hyderabad, India</span>
+                </div>
+
+                <button class="email-copy"
+                        id="copyEmail"
+                        data-email="devireddyv22@gmail.com">
+                    Click here to copy my email
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    © 2026 Vamshi Dhar Reddy · Software Test Engineer
+</footer>
+
+<script>
+    const navbar = document.getElementById("navbar");
+    const navLinksContainer = document.getElementById("navLinks");
+    const menuButton = document.getElementById("menuButton");
+    const themeButton = document.getElementById("themeButton");
+    const copyEmailButton = document.getElementById("copyEmail");
+
+    // Add glass effect after scrolling.
+    window.addEventListener("scroll", () => {
+        navbar.classList.toggle("scrolled", window.scrollY > 20);
+    });
+
+    // Mobile navigation.
+    menuButton.addEventListener("click", () => {
+        const isOpen = navLinksContainer.classList.toggle("open");
+
+        menuButton.textContent = isOpen ? "✕" : "☰";
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    // Close mobile menu after clicking a navigation link.
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+            navLinksContainer.classList.remove("open");
+            menuButton.textContent = "☰";
+            menuButton.setAttribute("aria-expanded", "false");
+        });
+    });
+
+    // Dark and light theme.
+    themeButton.addEventListener("click", () => {
+        document.body.classList.toggle("light");
+
+        const isLight = document.body.classList.contains("light");
+        themeButton.textContent = isLight ? "☀" : "◐";
+    });
+
+    // Copy email address.
+    copyEmailButton.addEventListener("click", async () => {
+        const email = copyEmailButton.dataset.email;
+
+        try {
+            await navigator.clipboard.writeText(email);
+
+            copyEmailButton.textContent =
+                "Email copied successfully ✓";
+
+            setTimeout(() => {
+                copyEmailButton.textContent =
+                    "Click here to copy my email";
+            }, 2500);
+        } catch (error) {
+            window.location.href = "mailto:" + email;
+        }
+    });
+
+    // Reveal elements while scrolling.
+    const revealObserver = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+    document.querySelectorAll(".reveal").forEach(element => {
+        revealObserver.observe(element);
+    });
+
+    // Highlight the active navigation link.
+    const navigationLinks = document.querySelectorAll(
+        '.nav-links a[href^="#"]'
+    );
+
+    const navigationSections = document.querySelectorAll(
+        "#about, #skills, #experience, #contact"
+    );
+
+    const navigationObserver = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navigationLinks.forEach(link => {
+                        link.classList.remove("active");
+
+                        if (
+                            link.getAttribute("href") ===
+                            "#" + entry.target.id
+                        ) {
+                            link.classList.add("active");
+                        }
+                    });
+                }
+            });
+        },
+        {
+            rootMargin: "-30% 0px -60% 0px"
+        }
+    );
+
+    navigationSections.forEach(section => {
+        navigationObserver.observe(section);
+    });
+</script>
 
 </body>
 </html>
